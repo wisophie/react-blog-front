@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import CtaButton from './CtaButton';
-import Navigation from './Navigation';
+
 import SmallHeading from './SmallHeading';
 // import blockchain from '../img/bchain.png';
 import { useTrail, animated } from "react-spring";
@@ -21,7 +21,7 @@ function MainContent() {
 
     return (
         <MainContentStyled >
-            <Navigation />
+
             <div className="content">
                 <div className="left">
                     <animated.div style={animatedTexts[0]}>

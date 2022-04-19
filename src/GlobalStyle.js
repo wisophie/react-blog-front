@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.2rem;
         font-weight: 400;
         background-color: #5577AA;
+        overflow-y:scroll;
         ::-webkit-scrollbar{
             width: 16px;
         }
@@ -69,6 +70,9 @@ const GlobalStyle = createGlobalStyle`
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 2rem;
     }
+
+
+
 `;
 
 export default GlobalStyle;

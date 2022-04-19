@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 // import logo from '../img/logo2.png';
 import { useSpring, a } from "@react-spring/web";
+import { Link } from "react-router-dom";
 
 // let timer = null;
 // function useCountdown(initialCount) {
@@ -40,11 +41,11 @@ function Navigation() {
     // }
 
     useEffect(() => {
-
+        window.addEventListener('scroll', handleScroll);
 
         const timeout = setTimeout(() => {
             // setIntervalId(newIntervalId);
-            console.log(count)
+
             setCount(count => count + 1);
             set(state => !state)
         }, 1000);
@@ -53,54 +54,78 @@ function Navigation() {
         }
         return () => clearTimeout(timeout);
     })
-
+    const handleScroll = (e) => {
+        const header = document.getElementById('header')
+        // var sliderbarTop = window.pageYOffset;
+        var sliderbarTop = window.scrollTop;
+        if (window.pageYOffset >= 690) { //if语句判断window页面Y方向的位移是否大于或者等于导航栏的height像素值
+            header.style.backgroundColor = '#5577AA';
+        } else {
+            header.style.backgroundColor = 'transparent';
+        }
+    }
 
     return (
-        <NavigationStyled>
-            <div className="logo">
-                {/* <img src={logo} alt="" /> */}
+        <NavigationStyled id='header'>
+            <div className='kuang'>
+                <div className="logo">
+                    {/* <img src={logo} alt="" /> */}
+                </div>
+                <div onClick={() => set(state => !state)} className='logos'>
+                    <a.div
+                        className='logos back'
+                        style={{ opacity: opacity.to(o => 1 - o), transform }}
+                    />
+                    <a.div
+                        className='logos front'
+                        style={{
+                            opacity,
+                            transform,
+                            rotateX: '180deg',
+                        }}
+                    />
+                </div>
+                <ul className="nav-items">
+                    <li>
+                        <Link to="/home"> Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/blogArticles"> Articles</Link>
+                    </li>
+                    <li>
+                        <Link to="/projects"> Projects</Link>
+                    </li>
+                    <li>
+                        <a href="#">Activity</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                    <div className="primary-btn">GET CONNECTED</div>
+                </ul>
             </div>
-            <div onClick={() => set(state => !state)} className='logos'>
-                <a.div
-                    className='logos back'
-                    style={{ opacity: opacity.to(o => 1 - o), transform }}
-                />
-                <a.div
-                    className='logos front'
-                    style={{
-                        opacity,
-                        transform,
-                        rotateX: '180deg',
-                    }}
-                />
-            </div>
-            <ul className="nav-items">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">FAQs</a>
-                </li>
-                <li>
-                    <a href="#">Activity</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-                <div className="primary-btn">GET CONNECTED</div>
-            </ul>
+
         </NavigationStyled>
     )
 }
 
 const NavigationStyled = styled.nav`
+  /* background-color:transparent; */
+   position:fixed;
+   /* border:1px solid red; */
+   width: 100%;
+   z-index:10;
+.kuang{
+    
     min-height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+   width: 80%;
+    height: 100%;
+    margin:0 auto;
+    /* border:1px solid red; */
     .nav-items{
         display: flex;
         align-items: center;
@@ -162,7 +187,7 @@ const NavigationStyled = styled.nav`
 .front {
     background-image: url(http://rac8w9hi8.hd-bkt.clouddn.com/logo2.png);
 }
-    
+}  
 `;
 
 export default Navigation;
