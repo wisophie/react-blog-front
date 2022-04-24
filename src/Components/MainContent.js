@@ -28,16 +28,14 @@ function MainContent() {
                         <SmallHeading title={'All Digital Currencies in One Place'} identifier={'Before'} />
                     </animated.div>
 
-                    <animated.h1 style={animatedTexts[1]}>
+                    <animated.h1 style={animatedTexts[1]} className='text-2xl font-bold'>
                         All NFTs You need in One Marketplace
-                        The Best Place to Collect , Buy and Sell <span className='GradientText'>Awesome NFTs</span>
+                        The Best Place to Collect  <span className='GradientText'>Awesome NFTs</span>
                     </animated.h1>
                     <animated.p style={animatedTexts[2]}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Vero id unde officiis hic nihil, quasi soluta ex corrupti nesciunt dolorem.
-                        Cumque obcaecati sint officiis quis laboriosam vitae, error molestiae temporibus
-                        voluptatum consectetur,
-                        quibusdam magni, delectus a autem soluta optio laborum!
+
                     </animated.p>
                     <animated.div style={animatedTexts[3]} className="btns-con">
                         <CtaButton name={'discover more'} />

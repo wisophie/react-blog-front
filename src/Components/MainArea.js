@@ -19,7 +19,7 @@ function MainArea() {
 
 const MainAreaStyled = styled.header`
     width: 100%;
-    height: 85vh;
+    height: 80vh;
     position: relative;
     overflow: hidden;
     .overlay{

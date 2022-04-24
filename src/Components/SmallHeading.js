@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-function SmallHeading({title, identifier}) {
+function SmallHeading({ title, identifier }) {
     return (
         <SmallHeadingStyled>
             <h3 className={identifier}>{title}</h3>
@@ -16,6 +16,8 @@ const SmallHeadingStyled = styled.div`
         display: inline-block;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
+        font-size:1.7rem;
+        font-weight:700;
     }
 `;
 

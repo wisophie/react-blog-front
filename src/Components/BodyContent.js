@@ -7,6 +7,7 @@ import DemonstrationSection from './DemonstrationSection';
 import GradientCardsSection from './GradientCardsSection';
 import MainTitle from './MainTitle';
 import SellerCard from './SellerCard';
+import beianga from '../img/beianga.png';
 
 
 function BodyContent() {
@@ -28,23 +29,29 @@ function BodyContent() {
             <footer>
                 <p>Copyright ©Yan Li. All Rights Reserved</p>
                 <p><a href="https://beian.miit.gov.cn">浙ICP备2022010356号-1</a></p>
+                <div className="ga">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33022602000595">
+                        <img src={beianga} />
+                        <p>浙公网安备33022602000595号</p>
+                    </a>
+                </div>
             </footer>
         </BodyContentStyled >
     )
 }
 
 const BodyContentStyled = styled.div`
-	
+	height:100vh;
     position:relative;
     &::before{
         content:"";
         position:absolute;
-        top:3%;
+        top:4%;
         left:0;
         width: 100%;
         height:100%;
         background:linear-gradient(#2193b0,#6dd5ed);
-        clip-path:circle(16% at right 20%);
+        clip-path:circle(24% at right 60%);
         /* z-index:10; */
        }
     &::after{
@@ -55,7 +62,7 @@ const BodyContentStyled = styled.div`
         width: 100%;
         height:100%;
         background:linear-gradient(#ee9ca7,#ffdde1);
-        clip-path:circle(13% at left 9%);
+        clip-path:circle(20% at left 25%);
         z-index:-1;
    
     }
@@ -83,6 +90,27 @@ const BodyContentStyled = styled.div`
             &:nth-child(2){
                 font-size:0.8rem;
             }
+        }
+        .ga{
+           width:215px;
+           
+            /* border:1px solid red; */
+            a{
+                display:flex;
+                /* border:1px solid red; */
+                img{
+                    height:20px;
+                    width:20px;
+                }
+                
+                p{
+                height:20px;
+                line-height:20px;
+                margin: 0px 0px 0px 3px; 
+                color:#939393;
+            }
+            }
+            
         }
         
     }

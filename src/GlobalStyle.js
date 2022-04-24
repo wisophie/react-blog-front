@@ -26,11 +26,12 @@ const GlobalStyle = createGlobalStyle`
             border-radius: 24px;
         }
         
-       
+        /* scroll-behavior: smooth; */
     }
     a{
         color: inherit;
         font-family: inherit;
+        text-decoration: none;
     }
     p{
         line-height: 2rem;
@@ -42,6 +43,8 @@ const GlobalStyle = createGlobalStyle`
         display: inline-block;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
+        font-size:1.7rem;
+        font-weight:700;
     }
 
     .Before{
@@ -71,6 +74,32 @@ const GlobalStyle = createGlobalStyle`
         grid-gap: 2rem;
     }
 
+    .text-shadow{
+  text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
+}
+
+.adjacent-post{
+  & .arrow-btn{
+    transition: width 300ms ease;
+    width: 50px;
+  }
+  &:hover{
+    & .arrow-btn{
+      width: 60px;
+    }
+  }
+}
+
+.react-multi-carousel-list {
+  & .arrow-btn{
+    transition: width 300ms ease;
+    width: 50px;
+    &:hover{
+      width: 60px;
+    }
+  }
+  
+}
 
 
 `;
