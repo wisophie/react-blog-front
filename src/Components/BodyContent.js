@@ -15,17 +15,14 @@ function BodyContent() {
         <BodyContentStyled>
             <InnerLayout>
                 <MainTitle title={'Top Rank This Month'} subtitle={'All Projects'} />
-                <div className="sellercards">
-                    <SellerCard />
-                    <SellerCard />
-                    <SellerCard />
-                    <SellerCard />
-                </div>
+
+                <SellerCard />
+
                 <BlogsSection />
                 <GradientCardsSection />
                 <DemonstrationSection />
             </InnerLayout>
-            {/* <ContactSection /> */}
+            <ContactSection />
             <footer>
                 <p>Copyright ©Yan Li. All Rights Reserved</p>
                 <p><a href="https://beian.miit.gov.cn">浙ICP备2022010356号-1</a></p>
@@ -43,6 +40,7 @@ function BodyContent() {
 const BodyContentStyled = styled.div`
 	height:100vh;
     position:relative;
+    /* border:2px solid red; */
     &::before{
         content:"";
         position:absolute;
@@ -66,14 +64,7 @@ const BodyContentStyled = styled.div`
         z-index:-1;
    
     }
-    .sellercards{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 2rem;
-        margin: 1.5rem 0;
-        
-        
-    }
+    
     
 
     footer{
@@ -82,11 +73,14 @@ const BodyContentStyled = styled.div`
         flex-direction: column;
         justify-content: center;
         background-color: #020A27;
-        padding: 2rem 0;
+        padding: 2rem 1rem;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         p{
             text-align: center;
             opacity: 0.7;
+            &:nth-child(1){
+                font-size:1.1rem;
+            }
             &:nth-child(2){
                 font-size:0.8rem;
             }

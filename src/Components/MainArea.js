@@ -22,6 +22,7 @@ const MainAreaStyled = styled.header`
     height: 80vh;
     position: relative;
     overflow: hidden;
+    /* border:1px solid red; */
     .overlay{
         width: 100%;
         height: 100%;

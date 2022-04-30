@@ -33,7 +33,7 @@ export default function Article() {
 
     return (
       <PostDetailStyled>
-        <Loader />;
+        <Loader />
       </PostDetailStyled>
     )
 
@@ -68,8 +68,18 @@ const PostDetailStyled = styled.div`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
     height: 100vh;
-    padding-top:10vh;
+    width: 70%;
+    margin-top:10vh;
+    @media (max-width:992px){
+      margin-top:8vh;
+      width: 100%;
+      transition:0.4s all;
+    }
+    @media (min-width:992px){
+       margin-top:10vh;
+       
+       transition:0.4s all;
+    }
 
 `;

@@ -3,6 +3,7 @@ import React from 'react';
 import moment from 'moment';
 
 const PostDetail = ({ post }) => {
+  console.log(post.content.raw.children[1])
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
     // console.log(post.featuredImage.url)
@@ -16,20 +17,25 @@ const PostDetail = ({ post }) => {
       }
 
       if (obj.underline) {
-        modifiedText = (<u key={index}>{text}</u>);
+        modifiedText = (<u className="underline" key={index}>{text}</u>);
+      }
+      if (obj.code) {
+        modifiedText = (<code key={index}>{text}</code>);
       }
     }
 
     switch (type) {
       case 'heading-three':
-        return <h3 key={index} className="text-gray-700 text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
+        return <h3 key={index} className="text-gray-700 text-lg lg:text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
       case 'paragraph':
-        return <p key={index} className="text-gray-700 mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
+        return <p key={index} className="text-gray-700 text-sm lg:text-lg  mb-7" >{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
       case 'heading-four':
         return <h4 key={index} className="text-gray-700 text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
+      case 'code-block':
+        return <div className='bg-gray-100 p-3 rounded border border-solid border-gray-300 overflow-hidden'><pre key={index} className="text-gray-700 mb-5 text-xs lg:text-sm">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</pre></div>
       case 'image':
         return (
-          <img
+          <img className=''
             key={index}
             alt={obj.title}
             height={obj.height}
