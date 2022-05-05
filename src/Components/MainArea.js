@@ -19,10 +19,24 @@ function MainArea() {
 
 const MainAreaStyled = styled.header`
     width: 100%;
-    height: 80vh;
+    height: 90vh;
+    /* padding-top:10vh; */
     position: relative;
     overflow: hidden;
     /* border:1px solid red; */
+    &::after{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height:100%;
+        background:linear-gradient(#ee9ca7,#ee9ca7);
+        clip-path:circle(25% at left 128.3%);
+        z-index:-1;
+   
+    }
+   
     .overlay{
         width: 100%;
         height: 100%;

@@ -7,7 +7,7 @@ import avatar from '../img/avata.jpg';
 import CtaButton from './CtaButton';
 
 import person2 from '../img/ai.jpg';
-import bitcoin from '../img/bitcoin.jpg';
+import bitcoin from '../img/coin.jpg';
 import person3 from '../img/person3.jpg';
 import computer from '../img/computer.jpg';
 
@@ -19,7 +19,7 @@ function DemonstrationSection() {
         <DemonstrationSectionStyled>
             <SectionStyled>
                 <div className="title-con">
-                    <MainTitle title={'Live Demonstration'} subtitle={'Live Demonstration'} para={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.'} />
+                    <MainTitle title={'Live Projects'} subtitle={'Live Projects'} para={''} />
                 </div>
 
                 <div className="gradient-cards-con">
@@ -35,6 +35,6 @@ function DemonstrationSection() {
 
 
 const DemonstrationSectionStyled = styled.div`
-
+  
 `;
 export default DemonstrationSection;

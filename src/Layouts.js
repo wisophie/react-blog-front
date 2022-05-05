@@ -12,6 +12,7 @@ const InnerLayout2 = styled.div`
 `;
 const SectionStyled = styled.section`
     padding: 2rem 0;
+    /* margin:0 auto; */
     /* border:1px solid red; */
 `;
 export { InnerLayout, InnerLayout2, SectionStyled }

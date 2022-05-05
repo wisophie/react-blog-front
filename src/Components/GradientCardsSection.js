@@ -7,17 +7,18 @@ import styled from 'styled-components';
 import CtaButton from './CtaButton';
 import person from '../img/person.jpg';
 import person2 from '../img/ai.jpg';
-import bitcoin2 from '../img/bitcoin2.jpg';
-import bitcoin from '../img/bitcoin.jpg';
+import bitcoin2 from '../img/coin2.jpg';
+import bitcoin from '../img/coin.jpg';
 import person3 from '../img/person3.jpg';
 import computer from '../img/computer.jpg';
+
 
 function GradientCardsSection() {
     return (
         <GradientCardsSectionStyled>
             <SectionStyled>
                 <div className="title-con">
-                    <MainTitle title={'New Upcoming Items'} subtitle={'Discover Upcoming Items'} para={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.'} />
+                    <MainTitle title={'New Upcoming Items'} subtitle={'Discover Upcoming Items'} para={''} />
                 </div>
                 <div className="gradient-cards-con">
                     {/* <GradientCard image={person} avatar={avatar} name={'@Joel Clock'} price={'0.067 ETH'} title={'Just a dummy title'} />
@@ -29,11 +30,13 @@ function GradientCardsSection() {
                     <GradientCard image={person} avatar={avatar} name={'@Joel Clock'} price={'0.067 ETH'} title={'Just a dummy title'}  />
                     <GradientCard image={bitcoin2} avatar={avatar} name={'@Joel Clock'} price={'0.067 ETH'} title={'Just a dummy title'}  /> */}
                 </div>
+
+
                 <div className="load">
                     <CtaButton name={'View More'} />
                 </div>
             </SectionStyled>
-        </GradientCardsSectionStyled>
+        </GradientCardsSectionStyled >
     )
 }
 
@@ -42,6 +45,7 @@ const GradientCardsSectionStyled = styled.div`
         padding-top: 3rem;
         text-align: center;
     }
+    
 `;
 
 export default GradientCardsSection;

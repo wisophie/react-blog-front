@@ -1,6 +1,6 @@
 import person from './img/person.jpg';
-import bitcoin from './img/bitcoin.jpg';
-import bitcoin2 from './img/bitcoin2.jpg';
+import bitcoin from './img/coin.jpg';
+import bitcoin2 from './img/coin2.jpg';
 import ai from './img/ai.jpg';
 
 const blogs = [

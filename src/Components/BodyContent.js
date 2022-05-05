@@ -60,7 +60,7 @@ const BodyContentStyled = styled.div`
         width: 100%;
         height:100%;
         background:linear-gradient(#ee9ca7,#ffdde1);
-        clip-path:circle(20% at left 25%);
+        clip-path:circle(25% at left 25%);
         z-index:-1;
    
     }

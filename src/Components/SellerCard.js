@@ -54,7 +54,7 @@ const SellerCardStyled = styled.div`
         max-width: 1300px;
         width: 100%;
         margin: 0 auto;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     
 
     .SellerCardswrapper{
@@ -63,7 +63,7 @@ const SellerCardStyled = styled.div`
     }
     .SellerCardsitems{
         /* display:flex; */
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
     
     /* display:flex;
@@ -120,7 +120,7 @@ const SellerCardStyled = styled.div`
         /* white-space:nowrap; */
         /* margin: 0 auto; */
             padding:0 0.7rem;
-            border:1px solid red;
+            /* border:1px solid red; */
         }
         &:hover{
         transform: translateY(-20px);

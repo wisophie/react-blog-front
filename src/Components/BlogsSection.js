@@ -10,7 +10,7 @@ function BlogsSection() {
         <BlogsSectionStyled>
             <SectionStyled>
                 <div className="title-con">
-                    <MainTitle title={'Popular Blogs'} subtitle={'Our Top Blogs'} para={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.'} />
+                    <MainTitle title={'Popular Blogs'} subtitle={'Our Top Blogs'} para={''} />
                 </div>
 
                 <div className="blogs">

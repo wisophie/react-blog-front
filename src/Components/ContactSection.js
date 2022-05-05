@@ -4,6 +4,7 @@ import { SectionStyled } from '../Layouts';
 import map from '../img/map.png';
 import { Link } from "react-router-dom";
 import beianga from '../img/beianga.png';
+import nhyanliwx from '../img/nhyanliwx.jpg'
 
 function ContactSection() {
   return (
@@ -62,10 +63,13 @@ function ContactSection() {
               </div>
               <div class='footer-link-items'>
                 <h2>Social Media</h2>
-                <Link to='/'>WeChat</Link>
+
+                <Link to='/' className='wechat'>WeChat
+                  <div className='wechatpic'><img src={nhyanliwx} alt="" /></div></Link>
                 <Link to='/'>公众号</Link>
                 <Link to='/'>TouTiao</Link>
                 <Link to='/'>Weibo</Link>
+
               </div>
             </div>
           </div>
@@ -135,6 +139,7 @@ function ContactSection() {
 }
 
 const ContactSectionStyled = styled.div`
+  
     /* background-color: #020C31;
     display: flex;
     align-items: center;
@@ -262,7 +267,53 @@ const ContactSectionStyled = styled.div`
   width: 160px;
   box-sizing: border-box;
   font-size:1rem;
+  position:relative;
 }
+.wechat{
+  &:hover{
+    .wechatpic{
+      width:8rem;
+  height:8rem;
+    opacity:1
+  }
+    
+  }
+.wechatpic{
+  position:absolute;
+  width:0;
+  height:0;
+  background-color:#fff;
+  top:3.5rem;
+  left:6rem;
+  border-top-right-radius:.5rem;
+  border-bottom-right-radius:.5rem;
+  border-bottom-left-radius:.5rem;
+  /* visibility:hidden; */
+  opacity:0;
+  transition:0.3s;
+  /* overflow:hidden; */
+  img{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius:.5rem;
+  border-bottom-right-radius:.5rem;
+  border-bottom-left-radius:.5rem;
+  }
+  &::before{
+    content:'';
+    position:absolute;
+    width: 0;
+    height: 0;
+    top:0;
+    left:-1rem;
+    border-top: 1rem solid #fff;
+    border-left: 1rem solid transparent;
+    
+  }
+  
+}
+}
+
 
 .footer-link-items h2 {
     font-size:1.5rem;

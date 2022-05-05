@@ -16,9 +16,15 @@ const SmallHeadingStyled = styled.div`
         display: inline-block;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        font-size:1.7rem;
+        font-size:2.0vw;
         font-weight:700;
+        @media (max-width:992px){
+            font-size:1.3rem;
+            
+            }
     }
+    
+    
 `;
 
 export default SmallHeading;

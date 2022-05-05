@@ -43,13 +43,17 @@ const GlobalStyle = createGlobalStyle`
         display: inline-block;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        font-size:1.7rem;
+        font-size:1.6vw;
         font-weight:700;
+        @media (max-width:992px){
+          font-size:1.2rem;
+            }
     }
 
     .Before{
         padding-left: 3rem;
         position: relative;
+        transition:0.3s all;
         &::before{
             content: '';
             position: absolute;
@@ -59,7 +63,15 @@ const GlobalStyle = createGlobalStyle`
             width: 35px;
             height: 2px;
             background-color: #395FF6 ;
+            transition:0.3s all;
         }
+        @media (max-width:992px){
+          padding-left: 2rem;
+          transition:0.3s all;
+           &::before{
+            width: 20px;
+           }
+          }
     }
 
     .title-con{

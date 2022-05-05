@@ -107,6 +107,7 @@ function Navigation() {
         //     }, 100)
         if (window.pageYOffset >= 690 && location.pathname == '/home') { //if语句判断window页面Y方向的位移是否大于或者等于导航栏的height像素值
             header.style.backgroundColor = '#5577AA';
+            navmenu.style.visibility = 'hidden';
         } else if (window.pageYOffset >= 10 && window.pageYOffset < 400 && location.pathname !== '/home') {
             navitems.style.opacity = 0;
             navitems.style.visibility = 'hidden';
@@ -189,38 +190,38 @@ function Navigation() {
 
                 <ul className="nav-items" id='nav'>
                     <li>
-                        <Link to="/home"> Home</Link>
+                        <Link to="/home">Home</Link>
                     </li>
                     <li>
-                        <Link to="/blogArticles"> Articles</Link>
+                        <Link to="/blogArticles">Articles</Link>
                     </li>
                     <li>
-                        <Link to="/projects"> Projects</Link>
+                        <Link to="/projects">Projects</Link>
                     </li>
                     <li>
-                        <a href="#">Activity</a>
+                        <Link to="/activity">Activity</Link>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <Link to="/contact">Contact</Link>
                     </li>
                     <div className="primary-btn">GET CONNECTED</div>
                     <div className="primary-btn2" onClick={handleClick}>MENU</div>
                 </ul>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'} >
                     <li>
-                        <Link className='link' to="/home"> Home</Link>
+                        <Link className='link' to="/home">Home</Link>
                     </li>
                     <li>
-                        <Link to="/blogArticles"> Articles</Link>
+                        <Link to="/blogArticles">Articles</Link>
                     </li>
                     <li>
-                        <Link to="/projects"> Projects</Link>
+                        <Link to="/projects">Projects</Link>
                     </li>
                     <li>
-                        <a href="#">Activity</a>
+                        <Link to="/activity">Activity</Link>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <Link to="/contact">Contact</Link>
                     </li>
                     <li>
                         <a href="#">Login</a>
@@ -239,7 +240,18 @@ const NavigationStyled = styled.nav`
    position:fixed;
    width: 100%;
    z-index:10;
-  
+   /* &::after{
+        content:"";
+        position:absolute;
+        top:380px;
+        left:0;
+        width: 100%;
+        height:100%;
+        background:linear-gradient(#ee9ca7,#ffdde1);
+        clip-path:circle(25% at left 25%);
+        z-index:111;
+   
+    } */
 .kuang{
     @media (max-width:992px){
         min-height: 8vh;
