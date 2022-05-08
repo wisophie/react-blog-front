@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useSpring, a } from "@react-spring/web";
 import { Link, useLocation } from "react-router-dom";
 import { Loader } from './jsx';
+
 // let timer = null;
 // function useCountdown(initialCount) {
 //     const [sec, setSec] = useState(initialCount);
@@ -154,7 +155,9 @@ function Navigation() {
     const handleClick = () => {
         setClick(!click);
     }
+    const loginShow = () => {
 
+    }
 
     // goback.style.visibility = 'hidden';
     // if (isLoading) {
@@ -204,7 +207,7 @@ function Navigation() {
                     <li>
                         <Link to="/contact">Contact</Link>
                     </li>
-                    <div className="primary-btn">GET CONNECTED</div>
+                    <div className="primary-btn" ><Link to="/login">GET CONNECTED</Link></div>
                     <div className="primary-btn2" onClick={handleClick}>MENU</div>
                 </ul>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'} >
@@ -224,7 +227,7 @@ function Navigation() {
                         <Link to="/contact">Contact</Link>
                     </li>
                     <li>
-                        <a href="#">Login</a>
+                        <Link to="/login">Login</Link>
                     </li>
                 </ul>
 

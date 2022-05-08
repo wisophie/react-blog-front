@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import Article from '../pages/Article'
 import Activity from '../pages/Activity'
 import Contact from '../pages/Contact'
+import Login from '../pages/Login'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 
@@ -19,6 +20,7 @@ const BaseRouter = () => (
         <Route path='/projects' element={<Projects />}></Route>
         <Route path='/blogArticles' element={<BlogArticles />}></Route>
         <Route path='/home' element={<Home />}></Route>
+        <Route path='/login' element={<Login />}></Route>
       </Route>
     </Routes>
   </Router>
