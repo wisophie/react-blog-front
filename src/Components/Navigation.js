@@ -96,6 +96,7 @@ function Navigation() {
 
     const handleScroll = (e) => {
         const header = document.getElementById('header')
+        const kuang = document.getElementsByClassName('kuang')[0]
         const navitems = document.getElementById('nav')
         const goback = document.getElementsByClassName('goback-btn2')[0]
         const navmenu = document.getElementsByClassName('nav-menu')[0];
@@ -106,9 +107,11 @@ function Navigation() {
         //     setTimeout(() => {
         //         setClick(!click);
         //     }, 100)
-        if (window.pageYOffset >= 690 && location.pathname == '/home') { //if语句判断window页面Y方向的位移是否大于或者等于导航栏的height像素值
+        if (window.pageYOffset >= 150 && location.pathname == '/home') { //if语句判断window页面Y方向的位移是否大于或者等于导航栏的height像素值
             header.style.backgroundColor = '#5577AA';
-            navmenu.style.visibility = 'hidden';
+            kuang.style.minHeight = '7vh';
+            // kuang.style.fontSize = '1.2rem';
+            // navmenu.style.visibility = 'hidden';
         } else if (window.pageYOffset >= 10 && window.pageYOffset < 400 && location.pathname !== '/home') {
             navitems.style.opacity = 0;
             navitems.style.visibility = 'hidden';
@@ -123,7 +126,7 @@ function Navigation() {
             navitems.style.opacity = 1;
             navitems.style.visibility = 'visible';
             header.style.backgroundColor = 'transparent';
-
+            kuang.style.minHeight = '10vh';
             navmenu.style.visibility = 'visible';
         }
     }
@@ -255,12 +258,14 @@ const NavigationStyled = styled.nav`
         z-index:111;
    
     } */
+    transition:0.4s;
 .kuang{
     @media (max-width:992px){
         min-height: 8vh;
     }
     @media (min-width:992px){
         min-height: 10vh;
+        transition:0.4s;
     }
     
     display: flex;
@@ -270,7 +275,6 @@ const NavigationStyled = styled.nav`
     width: 80%;
     height: 100%;
     margin:0 auto;
-    /* border:1px solid red; */
     @media (max-width:992px) {
         .nav-menu {
             display: flex;

@@ -79,16 +79,14 @@ const BodyContentStyled = styled.div`
             text-align: center;
             opacity: 0.7;
             &:nth-child(1){
-                font-size:1.1rem;
+                font-size:1.2rem;
             }
             &:nth-child(2){
                 font-size:0.8rem;
             }
         }
         .ga{
-           width:215px;
-           
-            /* border:1px solid red; */
+           width:230px;
             a{
                 display:flex;
                 /* border:1px solid red; */

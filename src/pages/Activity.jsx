@@ -34,9 +34,10 @@ const ActivityStyled = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  
   h1{
         margin-top:20%;
+        color: #fff
   }
 }
 

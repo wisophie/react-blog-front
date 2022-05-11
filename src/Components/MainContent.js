@@ -5,6 +5,8 @@ import CtaButton from './CtaButton';
 import SmallHeading from './SmallHeading';
 // import blockchain from '../img/bchain.png';
 import { useTrail, animated } from "react-spring";
+import { Carousel } from 'antd';
+import res from '../img/res.jpg'
 
 function MainContent() {
     // animation
@@ -18,6 +20,13 @@ function MainContent() {
         },
         // delay: 300,
     });
+    // const contentStyle = {
+    //     height: '360px',
+    //     color: '#fff',
+    //     lineHeight: '360px',
+    //     textAlign: 'center',
+    //     // background: '#364d79',
+    // };
 
     return (
         <MainContentStyled >
@@ -43,9 +52,26 @@ function MainContent() {
                     </animated.div>
                 </div>
                 <div className="right">
-                    {/* <img src={blockchain} alt="" /> */}
+                    {/* <img src={res} alt="" /> */}
+                    <Carousel autoplay>
+                        <div className='Carouselone'>
+                            <img src={res} ></img>
+                            <h1>响应式网页设计 <br />
+                                ----Responsive Web Design----</h1>
+
+                        </div>
+                        <div className='Carouseltwo'>
+                            {/* <h3 style={contentStyle}>2</h3> */}
+                        </div>
+                        <div className='Carouselthree'>
+                            {/* <h3 style={contentStyle}>3</h3> */}
+                        </div>
+                        <div className='Carouselfour'>
+                            {/* <h3 style={contentStyle}>4</h3> */}
+                        </div>
+                    </Carousel>
                 </div>
-            </div>
+            </div >
         </MainContentStyled >
     )
 }
@@ -66,7 +92,44 @@ const MainContentStyled = styled.div`
         grid-template-columns: repeat(2, 1fr); */
         height: 100%;
         width:100%;
-        
+        .right{
+            .Carouselone{
+                position: relative;
+                width: 100%;
+                /* height: 100%; */
+                /* display: flex;
+                flex-flow: column; */
+                padding-top: 67%;
+                transition: all .4s ease-in-out;
+                img{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    height: 100%;
+                    max-height: 100%;
+                    transition: all .4s ease-in-out;
+                    object-fit: cover;
+                    cursor:pointer;
+                    &:hover{
+                        transform: scale(1.05) ;
+                    }
+                }
+                h1{
+                    position: absolute;
+                    top: 4%;
+                    left:5%;
+                    font-size:1.5rem;
+                    color: #fff;
+                   
+                }
+               
+            }
+        }
         .left{
             border:1px solid red;
             display: flex;
@@ -74,7 +137,7 @@ const MainContentStyled = styled.div`
             flex-direction: column;
             font-size:1.3vw;
             .ptext{
-                font-size:1.0vw;
+                font-size:0.9vw;
             }
             h1{
                 padding: 1.8rem 0;
@@ -87,13 +150,21 @@ const MainContentStyled = styled.div`
                 align-items: flex-start;
                 margin-top: 3rem;
                 border:1px solid red;
+                
             }
         }
         .right{
-            width:100%;
+            display:flex;
+            justify-content: center;
+            flex-direction: column;
+            width:60%;
             height:100%;
-            background:pink;
             border:1px solid red;
+            .ant-carousel{
+                width:80%;
+                margin:0 auto;
+                border:1px solid red;
+            }
             img{
                 position: absolute;
                 right: -11%;
@@ -122,7 +193,14 @@ const MainContentStyled = styled.div`
         }
         
         .right{
-            max-height:32%;
+            max-height:40%;
+            width:100%;
+            .ant-carousel{
+                width:100%;
+                height:300px;
+                /* margin:0 auto; */
+                border:1px solid red;
+            }
         }
 }
 

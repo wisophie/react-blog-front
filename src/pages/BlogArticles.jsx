@@ -18,6 +18,7 @@ export default function BlogArticles() {
   // console.log(arr[0])
   // const arr1 = arr.length > 0 ? arr : '';  //重点,fetchData是异步的确保arr有数据才执行
   // console.log(arr1)
+  // arr数据有异步等待功能
   return (
     <BlogArticlesStyled>
       <FeaturedPosts />

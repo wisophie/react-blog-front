@@ -251,7 +251,7 @@ height:100vh;
             }
         }
         .ga{
-           width:215px;
+          width:230px;
            
             /* border:1px solid red; */
             a{

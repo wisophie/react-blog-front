@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BaseRouter from './router'
+import 'antd/dist/antd.css';
+import "tailwindcss/tailwind.css";
 import GlobalStyle from './GlobalStyle';
-import "tailwindcss/tailwind.css"
-
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
