@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 import CtaButton from './CtaButton';
-
+import { Link } from "react-router-dom";
 import SmallHeading from './SmallHeading';
 // import blockchain from '../img/bchain.png';
 import { useTrail, animated } from "react-spring";
-import { Carousel } from 'antd';
+import { Carousel, Image } from 'antd';
 import res from '../img/res.jpg'
+import AIvirus from '../img/AIvirus.jpg'
+import lichatjp from '../img/lichat.jpg'
 
 function MainContent() {
     // animation
@@ -56,18 +58,18 @@ function MainContent() {
                     <Carousel autoplay>
                         <div className='Carouselone'>
                             <img src={res} ></img>
-                            <h1>响应式网页设计 <br />
-                                ----Responsive Web Design----</h1>
+                            {/* <h1>响应式网页设计 <br />
+                                ----Responsive Web Design----</h1> */}
 
                         </div>
-                        <div className='Carouseltwo'>
-                            {/* <h3 style={contentStyle}>2</h3> */}
+                        <Link to='/projects'><div className='Carouselone Carouseltwo'>
+                            <img src={lichatjp} ></img>
+                        </div></Link>
+                        <div className='Carouselone Carouselthree'>
+                            <img src={lichatjp} ></img>
                         </div>
-                        <div className='Carouselthree'>
-                            {/* <h3 style={contentStyle}>3</h3> */}
-                        </div>
-                        <div className='Carouselfour'>
-                            {/* <h3 style={contentStyle}>4</h3> */}
+                        <div className='Carouselone Carouselfour'>
+                            <img src={AIvirus} ></img>
                         </div>
                     </Carousel>
                 </div>
@@ -85,7 +87,6 @@ const MainContentStyled = styled.div`
     width: 80%;
     height: 100%;
     padding-top:10vh;
-    border:1px solid red;
     .content{
         display: flex;
         /* display: grid;
@@ -101,6 +102,23 @@ const MainContentStyled = styled.div`
                 flex-flow: column; */
                 padding-top: 67%;
                 transition: all .4s ease-in-out;
+                cursor:pointer;
+                overflow:hidden;
+                &::after {
+                    content: '响应式网页设计－Responsive Web Design－';
+                    position: absolute;
+                    bottom: 0;
+                    left:0;
+                    padding: 6px 8px;
+                    width: 100%;
+                    height:60px;
+                    text-align:center;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    color: #fff;
+                    background-color: rgba(0,0,0,0.5);
+                    box-sizing: border-box;
+                }
                 img{
                     position: absolute;
                     top: 0;
@@ -114,7 +132,7 @@ const MainContentStyled = styled.div`
                     max-height: 100%;
                     transition: all .4s ease-in-out;
                     object-fit: cover;
-                    cursor:pointer;
+                    
                     &:hover{
                         transform: scale(1.05) ;
                     }
@@ -125,13 +143,17 @@ const MainContentStyled = styled.div`
                     left:5%;
                     font-size:1.5rem;
                     color: #fff;
-                   
+                    text-shadow: 0 1px 1px rgba(0,34,69,.6);
                 }
                
             }
+            .Carouselone.Carouseltwo{
+                &::after {
+                    content: '即时通讯移动端项目-立聊lichat';
+                }
+            }
         }
         .left{
-            border:1px solid red;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -149,7 +171,6 @@ const MainContentStyled = styled.div`
                 
                 align-items: flex-start;
                 margin-top: 3rem;
-                border:1px solid red;
                 
             }
         }
@@ -159,11 +180,9 @@ const MainContentStyled = styled.div`
             flex-direction: column;
             width:60%;
             height:100%;
-            border:1px solid red;
             .ant-carousel{
                 width:80%;
                 margin:0 auto;
-                border:1px solid red;
             }
             img{
                 position: absolute;

@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         background-color: #5577AA;
         overflow-y:scroll;
+        overflow-x:hidden;
         ::-webkit-scrollbar{
             width: 16px;
         }
@@ -111,6 +112,11 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   
+}
+#nprogress .bar {
+  position:fixed !important;
+	background: #FF9797 !important;
+	height: 2px !important;
 }
 
 

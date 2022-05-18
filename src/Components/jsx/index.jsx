@@ -7,3 +7,6 @@ export { default as Comments } from './Comments';
 export { default as CommentsForm } from './CommentsForm';
 export { default as Loader } from './Loader';
 export { default as FeaturedPostCard } from './FeaturedPostCard';
+export { default as Nprogress } from './Nprogress';
+export { default as Mask } from './Mask';
+export { default as Results } from './Result';

@@ -424,15 +424,53 @@ const NavigationStyled = styled.nav`
            }
        }
        .primary-btn{
+        position: relative;
            margin-left: 3rem;
            background-color:rgba(57, 95, 246, 0.6);
            padding: .6rem 1.3rem;
            border-radius: 70px;
            cursor: pointer;
            transition: all .4s ease-in-out;
+           box-shadow: 0 3px 5px 0 rgba(0,0,0,.4);
+           &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            /* bottom: 0; */
+            left: 0;
+            /* right: 0; */
+            width: 100%;
+            height: 100%;
+            border-radius:70px;
+            border: 3px solid rgba(57, 95, 246, 0.8);
+            background: transparent;
+            z-index:-1;
+            
+           }
            &:hover{
                background-color:rgba(57, 95, 246, 1);
+               &::before{
+                animation: pulse 2.5s cubic-bezier(.57,.06,.27,.84) infinite none running;
+               }
            }
+           @keyframes pulse {
+                0% {
+                    transform: scale(0.2);
+                    opacity: 0;
+                }
+                10% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1.2);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+ }
        }
        .primary-btn2{display: none;}
    }
