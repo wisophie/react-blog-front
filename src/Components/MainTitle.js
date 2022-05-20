@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import SmallHeading from './SmallHeading';
 
-function MainTitle({title, subtitle, para}) {
+function MainTitle({ title, subtitle, para }) {
     return (
         <MainTitleStyled>
             <SmallHeading title={subtitle} />
@@ -13,6 +13,7 @@ function MainTitle({title, subtitle, para}) {
 }
 
 const MainTitleStyled = styled.div`
+text-align:center;
     h2{
         padding-top: 1rem;
         font-weight: 500;

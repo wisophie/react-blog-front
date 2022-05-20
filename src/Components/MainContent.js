@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SmallHeading from './SmallHeading';
 // import blockchain from '../img/bchain.png';
 import { useTrail, animated } from "react-spring";
-import { Carousel, Image } from 'antd';
+import { Carousel } from 'antd';
 import res from '../img/res.jpg'
 import AIvirus from '../img/AIvirus.jpg'
 import lichatjp from '../img/lichat.jpg'

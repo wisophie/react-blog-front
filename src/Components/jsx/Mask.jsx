@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import iphone from '../../img/browser_big.png';
 import { MaskContext } from '../../App';
 const Mask = () => {
-  const { maskclick, setMaskclick } = useContext(MaskContext)
+  const { maskclick, setMaskclick, url } = useContext(MaskContext)
   return (
     <Maskstyled>
       <div>
         <div className={maskclick ? 'mask' : ''}>
         </div>
         <div className={maskclick ? 'z' : 'z active'} style={{ width: '380px', height: '690px' }}>
-          <iframe className='iframe' scrolling="auto" width='343' height='482' src="http://www.wispw.com:8083" style={{ background: 'white', }} ></iframe>
+          <iframe className='iframe' scrolling="auto" width='343' height='482' src={url} style={{ background: 'white', }} ></iframe>
           <div onClick={() => setMaskclick(!maskclick)} className='close'></div>
         </div>
       </div>

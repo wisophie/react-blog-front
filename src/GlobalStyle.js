@@ -118,7 +118,14 @@ const GlobalStyle = createGlobalStyle`
 	background: #FF9797 !important;
 	height: 2px !important;
 }
-
+.ant-image-preview-img{
+  position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
 
 `;
 

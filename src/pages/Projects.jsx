@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components';
 import projectspic from '../img/img-2.jpg';
 import iphone from '../img/browser_big.png';
@@ -8,6 +8,7 @@ import lichatlogo from '../img/lichatlogo.png'
 import fast from '../img/fast.png'
 import nodelogo from '../img/node.png'
 import uniapplogo from '../img/uniapp.jpg'
+import net163logo from '../img/net163.jpg'
 import lichatjp from '../img/lichat.jpg'
 import { Tooltip, Modal, Image } from 'antd';
 import { MaskContext } from '../App';
@@ -74,11 +75,14 @@ import { MaskContext } from '../App';
 
 
 export default function Projects() {
-  const { maskclick, setMaskclick, islogin } = useContext(MaskContext)
+  const { maskclick, setMaskclick, url, setUrl } = useContext(MaskContext)
   // const [num, setNum] = useState(0)
   const [state, toggle] = useState(true)
   const [state1, toggle1] = useState(true)
   const [state2, toggle2] = useState(true)
+  const lichaturl = "http://www.wispw.com:8083"
+  const yuantiku = "http://www.wispw.com:8083"
+  const net163 = "http://www.wispw.com:8084"
   const { x } = useSpring({
     from: { x: 0 },
     x: state ? 1 : 0,
@@ -94,7 +98,10 @@ export default function Projects() {
     x2: state2 ? 1 : 0,
     config: { duration: 1000 },
   })
-
+  // 返回顶部
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
 
@@ -105,9 +112,12 @@ export default function Projects() {
     });
   }
 
-  const handlereview = () => {
+  const handlereview = (a) => {
     let user = sessionStorage.getItem('user');
-    if (user) { setMaskclick(!maskclick) }
+    if (user) {
+      setMaskclick(!maskclick);
+      setUrl(a)
+    }
     else {
       warning()
     }
@@ -136,7 +146,7 @@ export default function Projects() {
               <div className='linkwrap' onMouseEnter={() => toggle(!state)}
 
               >
-                <animated.div onClick={handlereview} className='link' style={{
+                <animated.div onClick={() => handlereview(lichaturl)} className='link' style={{
                   opacity: x.to({ range: [0, 1], output: [1, 1] }),
                   scale: x.to({
                     range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
@@ -164,7 +174,7 @@ export default function Projects() {
           </div>
           <div className='items'> <div className='item'>
             <img className='lichatlogo' src={lichatlogo} alt="" />
-            <h4>立聊即时通讯软件</h4>
+            <h4>立聊App服务器端</h4>
             <div></div>
             <div><img src='' alt="" /></div>
             <div className='discription'><p>立聊即时通讯软件详细介绍</p></div>
@@ -213,14 +223,14 @@ export default function Projects() {
           <div className='items'>
             <div className='item'>
               <img className='lichatlogo' src={fast} alt="" />
-              <h4>题库练习H5移动端</h4>
+              <h4>IT题库练习H5移动端</h4>
               <div></div>
               <div><img src='' alt="" /></div>
-              <div className='discription'><p>考试题库移动端软件，nodejs做服务器端，数据库为mongodb，可实现一对一单聊,可发送文字、表情、图片等。</p></div>
+              <div className='discription'><p>一个以IT为主题的考试题库练习移动端软件，nodejs做服务器端，数据库为mongodb，可实现一对一单聊,可发送文字、表情、图片等。</p></div>
               <div className='linkwrap' onMouseEnter={() => toggle1(!state1)}
 
               >
-                <animated.div onClick={handlereview} className='link' style={{
+                <animated.div onClick={() => handlereview(yuantiku)} className='link' style={{
                   opacity: x1.to({ range: [0, 1], output: [1, 1] }),
                   scale: x1.to({
                     range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
@@ -246,15 +256,15 @@ export default function Projects() {
         <div className='col' style={{ width: ' 33.3333%' }}>
           <div className='items'>
             <div className='item'>
-              <img className='lichatlogo' src={fast} alt="" />
-              <h4>猿题库H5移动端</h4>
+              <img className='lichatlogo' src={net163logo} alt="" />
+              <h4>仿网易严选H5移动端界面</h4>
               <div></div>
               <div><img src='' alt="" /></div>
               <div className='discription'><p>考试题库移动端，nodejs做服务器端，数据库为mongodb，可实现一对一单聊,可发送文字、表情、图片等。</p></div>
               <div className='linkwrap' onMouseEnter={() => toggle2(!state2)}
 
               >
-                <animated.div onClick={handlereview} className='link' style={{
+                <animated.div onClick={() => handlereview(net163)} className='link' style={{
                   opacity: x2.to({ range: [0, 1], output: [1, 1] }),
                   scale: x2.to({
                     range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
@@ -269,7 +279,7 @@ export default function Projects() {
                   <Tooltip title="React" overlayClassName='tooltips'><img src="data:image/png;base64,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" alt="" /></Tooltip>
                   <img src={uniapplogo} alt="" />
                   <img src='https://github.yanhaixiang.com/static/media/js.d1d71893.png' alt="" />
-                  <img src='https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress' alt="" />
+
                 </div>
               </div>
             </div>

@@ -1,10 +1,10 @@
 import avatar1 from './img/avata.jpg';
-
+import lichat from './img/lichat.jpg';
 const data = [
     {
         id: 1,
         title: 'lichat app',
-        image: avatar1,
+        image: lichat,
         content: 'Sentient beings, stubbornly alive, the pursuit of sweet love, marriage, career success, are in order to find the fragrance of the soul - happiness.Happiness is god throws a piece of the earth to think about the most bait, not to get, it makes you miss, once you get, and let you feel taste.'
     },
     {

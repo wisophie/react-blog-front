@@ -6,7 +6,7 @@ import { Mask } from './Components/jsx';
 const MaskContext = createContext()
 function App() {
   const [maskclick, setMaskclick] = useState(false)
-  const [islogin, setIslogin] = useState(false)
+  const [url, setUrl] = useState("")
   // const navigate = useNavigate();
 
   // navigate("/home");
@@ -14,7 +14,7 @@ function App() {
 
 
   return (
-    <MaskContext.Provider value={{ maskclick, setMaskclick, islogin, setIslogin }} className="App">
+    <MaskContext.Provider value={{ maskclick, setMaskclick, url, setUrl }} className="App">
       <Mask />
       <Navigation />
       <Outlet />

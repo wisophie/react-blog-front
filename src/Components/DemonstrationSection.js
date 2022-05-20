@@ -6,10 +6,6 @@ import MainTitle from './MainTitle';
 import avatar from '../img/avata.jpg';
 import CtaButton from './CtaButton';
 
-import person2 from '../img/ai.jpg';
-import bitcoin from '../img/coin.jpg';
-import person3 from '../img/person3.jpg';
-import computer from '../img/computer.jpg';
 
 function DemonstrationSection() {
 

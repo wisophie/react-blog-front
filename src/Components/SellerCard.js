@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import data from '../data';
-
+import { Link } from "react-router-dom";
 function SellerCard() {
     return (
         <SellerCardStyled >
@@ -27,7 +27,7 @@ function SellerCard() {
                                             <p>{item.content}</p>
                                         </div>
 
-                                        <a href="">READ MORE</a>
+                                        <Link to='/projects'>READ MORE</Link>
                                     </div>
 
 
@@ -115,7 +115,7 @@ const SellerCardStyled = styled.div`
   -webkit-box-orient: vertical;
 
         width:100%;
-        height:8rem;
+        height:6rem;
         font-size:1rem;
         /* white-space:nowrap; */
         /* margin: 0 auto; */
@@ -128,10 +128,10 @@ const SellerCardStyled = styled.div`
         .image{
             position: relative;
                 width: 100%;
-                /* height: 100%; */
+                /* height: 8rem; */
                 /* display: flex;
                 flex-flow: column; */
-                padding-top: 67%;
+                padding-top: 80%;
                 overflow: hidden;
             img{
                 position: absolute;

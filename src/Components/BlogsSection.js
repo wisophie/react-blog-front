@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { SectionStyled } from '../Layouts';
 import MainTitle from './MainTitle';
-import blogs from '../blogs';
+import { blogs, blog3 } from '../blogs';
 
 function BlogsSection() {
     return (
@@ -15,6 +15,28 @@ function BlogsSection() {
 
                 <div className="blogs">
                     <div className="cards-wrapper">
+                        <div className='cards-items' >
+                            {
+                                blog3.map((blog) => {
+                                    // console.log(blog)
+                                    return <div className="blog" key={blog.id}>
+
+                                        <Link to={{ pathname: `/post/${blog.code}` }}>
+                                            <div className="image" data-category={blog.category}>
+                                                <img src={blog.image} alt="" />
+                                            </div>
+                                            <h6>{blog.title}</h6>
+                                            <h7 className="user">Creator : {blog.name}
+                                            </h7>
+                                        </Link>
+
+
+
+
+                                    </div>
+                                })
+                            }
+                        </div>
                         <div className='cards-items' >
                             {
                                 blogs.map((blog) => {
