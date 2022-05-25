@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { SectionStyled } from '../Layouts';
-import GradientCard from './GradientCard';
 import MainTitle from './MainTitle';
-import avatar from '../img/avata.jpg';
-import CtaButton from './CtaButton';
+// import CtaButton from './CtaButton';
 
 
 function DemonstrationSection() {
 
-    const ctaButton = <CtaButton name={'Place bid'} />
+    // const ctaButton = <CtaButton name={'Place bid'} />
 
     return (
         <DemonstrationSectionStyled>

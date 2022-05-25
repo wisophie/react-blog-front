@@ -1,59 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import beianga from '../img/beianga.png';
 import {
   Form,
   Input,
-  InputNumber,
   Tooltip,
   Select,
-  Row,
-  Col,
   Checkbox,
   Button,
-  AutoComplete,
 } from 'antd';
 // import { LoginApi } from '../request/api'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { useTrail, animated } from "react-spring";
 import reactspring from '../img/reactspring.png';
 
 
-const { Option } = Select;
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-];
+// const { Option } = Select;
+
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -89,51 +52,51 @@ const tailFormItemLayout = {
 
 
 export default function RegistrationForm() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
 
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
-  const suffixSelector = (
-    <Form.Item name="suffix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="USD">$</Option>
-        <Option value="CNY">¥</Option>
-      </Select>
-    </Form.Item>
-  );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+  // const prefixSelector = (
+  //   <Form.Item name="prefix" noStyle>
+  //     <Select
+  //       style={{
+  //         width: 70,
+  //       }}
+  //     >
+  //       <Option value="86">+86</Option>
+  //       <Option value="87">+87</Option>
+  //     </Select>
+  //   </Form.Item>
+  // );
+  // const suffixSelector = (
+  //   <Form.Item name="suffix" noStyle>
+  //     <Select
+  //       style={{
+  //         width: 70,
+  //       }}
+  //     >
+  //       <Option value="USD">$</Option>
+  //       <Option value="CNY">¥</Option>
+  //     </Select>
+  //   </Form.Item>
+  // );
+  // const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-    }
-  };
+  // const onWebsiteChange = (value) => {
+  //   if (!value) {
+  //     setAutoCompleteResult([]);
+  //   } else {
+  //     setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
+  //   }
+  // };
 
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
+  // const websiteOptions = autoCompleteResult.map((website) => ({
+  //   label: website,
+  //   value: website,
+  // }));
 
   // const onFinish = async (values) => {
   //   console.log('Received values of form: ', values);
@@ -185,10 +148,10 @@ export default function RegistrationForm() {
   // })
 
 
-  // 用户名
-  const [data, setData] = useState("");
-  // 密码
-  const [pwd, setPwd] = useState("");
+  // // 用户名
+  // const [data, setData] = useState("");
+  // // 密码
+  // const [pwd, setPwd] = useState("");
 
   // 点击了登录
   // function submitFn() {

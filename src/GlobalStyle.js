@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
         overflow-y:scroll;
         overflow-x:hidden;
         ::-webkit-scrollbar{
-            width: 16px;
+            width: 17px;
         }
         ::-webkit-scrollbar-track{
             background: #ccc;
@@ -125,6 +125,12 @@ const GlobalStyle = createGlobalStyle`
     bottom:0;
     right:0;
     margin:auto;
+}
+//解决打开模态框页面跳动问题
+.ant-scrolling-effect{
+  width:100% !important;
+  overflow-y:scroll !important;
+  
 }
 
 `;

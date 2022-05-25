@@ -1,8 +1,6 @@
 import React from 'react'
 import projectspic from '../img/img-8.jpg';
 import styled from 'styled-components';
-import { Image } from 'antd';
-import ai from '../img/ai.jpg';
 export default function activity() {
   return (
     <ActivityStyled>

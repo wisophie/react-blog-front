@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
-// import logo from '../img/logo2.png';
+import logo2 from '../img/logo2.png';
+import logo2_1 from '../img/logo2_1.png';
 import { useSpring, a } from "@react-spring/web";
 import { Link, useLocation } from "react-router-dom";
-import { Loader } from './jsx';
+import { Input, Modal } from 'antd';
+const { Search } = Input;
+const onSearch = (value) => console.log(value);
+// import { Loader } from './jsx';
 
 // let timer = null;
 // function useCountdown(initialCount) {
@@ -27,13 +31,33 @@ function Navigation() {
 
     const [click, setClick] = useState(false);
     const [count, setCount] = useState(0);
-    const [isLoading, setLoading] = useState(true);
+    // const [isLoading, setLoading] = useState(true);
     const [flipped, set] = useState(false)
     const { transform, opacity } = useSpring({
         opacity: flipped ? 1 : 0,
         transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
         config: { mass: 5, tension: 500, friction: 80 },
     })
+
+    function warning() {
+        Modal.warning({
+            title: '提示',
+            content: '请先登录!',
+        });
+    }
+
+    //搜索模块
+    const handlesearch = () => {
+        let user = sessionStorage.getItem('user');
+        if (user) {
+            //搜索
+        }
+        else {
+            warning()
+        }
+
+    }
+
     // let myInterval = null;
 
     // const interval = () => {
@@ -102,17 +126,18 @@ function Navigation() {
         const navmenu = document.getElementsByClassName('nav-menu')[0];
         // console.log(navitems)
         // var sliderbarTop = window.pageYOffset;
-        var sliderbarTop = window.scrollTop;
+        // var sliderbarTop = window.scrollTop;
         // if (click)
         //     setTimeout(() => {
         //         setClick(!click);
         //     }, 100)
-        if (window.pageYOffset >= 150 && location.pathname == '/home') { //if语句判断window页面Y方向的位移是否大于或者等于导航栏的height像素值
+        if (document.body.clientWidth >= 992 && window.pageYOffset >= 150 && location.pathname === '/home') { //if语句判断window页面Y方向的位移是否大于或者等于导航栏的height像素值
             header.style.backgroundColor = '#5577AA';
             kuang.style.minHeight = '7vh';
+            header.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,.3)';
             // kuang.style.fontSize = '1.2rem';
             // navmenu.style.visibility = 'hidden';
-        } else if (window.pageYOffset >= 10 && window.pageYOffset < 400 && location.pathname !== '/home') {
+        } else if (window.pageYOffset >= 13 && window.pageYOffset < 400 && location.pathname !== '/home') {
             navitems.style.opacity = 0;
             navitems.style.visibility = 'hidden';
             goback.style.opacity = 0;
@@ -126,6 +151,7 @@ function Navigation() {
             navitems.style.opacity = 1;
             navitems.style.visibility = 'visible';
             header.style.backgroundColor = 'transparent';
+            header.style.boxShadow = 'none'
             kuang.style.minHeight = '10vh';
             navmenu.style.visibility = 'visible';
         }
@@ -158,9 +184,7 @@ function Navigation() {
     const handleClick = () => {
         setClick(!click);
     }
-    const loginShow = () => {
 
-    }
 
     // goback.style.visibility = 'hidden';
     // if (isLoading) {
@@ -195,6 +219,7 @@ function Navigation() {
                 </Link>
 
                 <ul className="nav-items" id='nav'>
+
                     <li>
                         <Link to="/home">Home</Link>
                     </li>
@@ -204,11 +229,14 @@ function Navigation() {
                     <li>
                         <Link to="/projects">Projects</Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/activity">Activity</Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/contact">Contact</Link>
+                    </li>
+                    <li>
+                        <Search placeholder="search" onSearch={handlesearch} style={{ width: 180 }} />
                     </li>
                     <div className="primary-btn" ><Link to="/login">GET CONNECTED</Link></div>
                     <div className="primary-btn2" onClick={handleClick}>MENU</div>
@@ -223,9 +251,9 @@ function Navigation() {
                     <li>
                         <Link to="/projects">Projects</Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/activity">Activity</Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/contact">Contact</Link>
                     </li>
@@ -259,6 +287,26 @@ const NavigationStyled = styled.nav`
    
     } */
     transition:0.4s;
+    
+    //搜索栏样式
+.ant-input-group-wrapper{
+    /* border:1px solid red; */
+    /* border-radius:10px; */
+}
+.ant-input-search{
+    /* border:1px solid red; */
+    .ant-input{
+        border-top-left-radius:0.9rem;
+        border-bottom-left-radius:0.9rem;
+    }
+}
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button{
+    border-radius: 0 0.9rem 0.9rem 0;
+}
+.ant-input-group-addon:last-child{
+    border-top-right-radius:0.9rem;
+    border-bottom-right-radius:0.9rem;
+}
 .kuang{
     @media (max-width:992px){
         min-height: 8vh;
@@ -271,7 +319,6 @@ const NavigationStyled = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
     width: 80%;
     height: 100%;
     margin:0 auto;
@@ -422,10 +469,15 @@ const NavigationStyled = styled.nav`
                padding:0.2rem 0.4rem;
              color:#000;
            }
+           &:hover:nth-child(5){
+               background-color:transparent;
+               padding:0.2rem 0.4rem;
+             color:#000;
+           }
        }
        .primary-btn{
         position: relative;
-           margin-left: 3rem;
+           margin-left: 2rem;
            background-color:rgba(57, 95, 246, 0.6);
            padding: .6rem 1.3rem;
            border-radius: 70px;
@@ -492,11 +544,11 @@ const NavigationStyled = styled.nav`
 }
 
 .back {
-  background-image: url(http://rac8w9hi8.hd-bkt.clouddn.com/logo2_1.png);
+  background-image: url(${logo2_1});
 }
 
 .front {
-    background-image: url(http://rac8w9hi8.hd-bkt.clouddn.com/logo2.png);
+    background-image: url(${logo2});
 }
 
 }  

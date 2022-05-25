@@ -59,14 +59,15 @@ const BlogArticlesStyled = styled.div`
     width: 70%;
     height: 100vh;
     margin-top:10vh;
+    transition:0.4s all;
     @media (max-width:992px){
-      margin-top:8vh;
+      /* margin-top:10vh; */
       width: 80%;
-      transition:0.4s all;
+      /* transition:0.4s all; */
     }
     @media (min-width:992px){
-       margin-top:10vh;
-       transition:0.4s all;
+       /* margin-top:10vh; */
+       /* transition:0.4s all; */
     }
 
 `;

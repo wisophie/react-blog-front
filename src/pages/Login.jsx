@@ -163,7 +163,7 @@ export default function Login() {
                   />
                 </Form.Item>
                 <Form.Item className='rf'>
-                  <Form.Item name="remember" valuePropName="checked" noStyle onChange={(e) => setFieldsValue(e.target.value)}>
+                  <Form.Item name="remember" valuePropName="checked" noStyle >
                     <Checkbox>Remember me</Checkbox>
                   </Form.Item>
 

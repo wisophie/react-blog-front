@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { SectionStyled } from '../Layouts';
 import map from '../img/map.png';
 import { Link } from "react-router-dom";
-import beianga from '../img/beianga.png';
 import nhyanliwx from '../img/nhyanliwx.jpg'
 
 function ContactSection() {

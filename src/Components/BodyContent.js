@@ -10,7 +10,7 @@ import SellerCard from './SellerCard';
 import beianga from '../img/beianga.png';
 import reactspring from '../img/reactspring.png';
 
-import { Tooltip, Image } from 'antd';
+import { Tooltip } from 'antd';
 function BodyContent() {
     return (
         <BodyContentStyled>
@@ -36,7 +36,7 @@ function BodyContent() {
                 <p><a href="https://beian.miit.gov.cn">浙ICP备2022010356号-1</a></p>
                 <div className="ga">
                     <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33022602000595">
-                        <img src={beianga} />
+                        <img src={beianga} alt='' />
                         <p>浙公网安备33022602000595号</p>
                     </a>
                 </div>

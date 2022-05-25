@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import iphone from '../../img/browser_big.png';
 import { MaskContext } from '../../App';
 const Mask = () => {
-  const { maskclick, setMaskclick, url } = useContext(MaskContext)
+  const { maskclick2, setMaskclick2, url } = useContext(MaskContext)
   return (
     <Maskstyled>
       <div>
-        <div className={maskclick ? 'mask' : ''}>
+        <div className={maskclick2 ? 'mask' : ''}>
         </div>
-        <div className={maskclick ? 'z' : 'z active'} style={{ width: '380px', height: '690px' }}>
+        <div className={maskclick2 ? 'z' : 'z active'} style={{ width: '380px', height: '690px' }}>
           <div className='iframewrap'>
-            <iframe title="navigation" className='iframe' scrolling="auto" width='360' height='482' src={url} style={{ background: 'white', }} ></iframe>
+            <iframe title="navigation" className='iframe' scrolling="auto" width='343' height='482' src={url} style={{ background: 'white', }} ></iframe>
           </div>
 
-          <div onClick={() => setMaskclick(!maskclick)} className='close'></div>
+          <div onClick={() => setMaskclick2(!maskclick2)} className='close'></div>
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const Maskstyled = styled.div`
           border-radius:4px;
           width:343px;
           height:484px;
-          overflow: hidden;
+          /* overflow: hidden; */
           /* border:1px solid red; */
         }
         .iframe{

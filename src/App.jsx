@@ -1,11 +1,12 @@
 
-import React, { useEffect, createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import Navigation from './Components/Navigation';
-import { Outlet, useNavigate } from "react-router-dom";
-import { Mask } from './Components/jsx';
+import { Outlet } from "react-router-dom";
+import { Mask, Mask2 } from './Components/jsx';
 const MaskContext = createContext()
 function App() {
   const [maskclick, setMaskclick] = useState(false)
+  const [maskclick2, setMaskclick2] = useState(false)
   const [url, setUrl] = useState("")
   // const navigate = useNavigate();
 
@@ -14,8 +15,9 @@ function App() {
 
 
   return (
-    <MaskContext.Provider value={{ maskclick, setMaskclick, url, setUrl }} className="App">
+    <MaskContext.Provider value={{ maskclick, setMaskclick, maskclick2, setMaskclick2, url, setUrl }} className="App">
       <Mask />
+      <Mask2 />
       <Navigation />
       <Outlet />
 

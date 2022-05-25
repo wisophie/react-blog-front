@@ -9,4 +9,5 @@ export { default as Loader } from './Loader';
 export { default as FeaturedPostCard } from './FeaturedPostCard';
 export { default as Nprogress } from './Nprogress';
 export { default as Mask } from './Mask';
+export { default as Mask2 } from './Mask2';
 export { default as Results } from './Result';

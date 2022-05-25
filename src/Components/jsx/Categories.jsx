@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment';
+// import moment from 'moment';
 import { Link } from "react-router-dom";
 
 import { getCategories } from '../../services';

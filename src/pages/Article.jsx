@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from '../Components/jsx';
-import { getPosts, getPostDetails } from '../services';
+import { getPostDetails } from '../services';
 
 import { useParams } from 'react-router-dom';
 
@@ -16,6 +16,11 @@ export default function Article() {
 
 
   const [isLoading, setLoading] = useState(true);
+
+  // 返回顶部
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
 

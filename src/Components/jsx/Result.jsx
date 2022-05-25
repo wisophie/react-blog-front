@@ -1,26 +1,28 @@
 import React, { useEffect } from 'react'
 import { Result, Button } from 'antd';
 import { Link } from "react-router-dom";
-export default function Results({ num, setNum, lgclick, timeout }) {
+export default function Results({ num, setNum, lgclick }) {
 
-  if (!lgclick) {
+  // if (!lgclick) {
 
-    return (
-      <div></div>
-    )
+  //   return (
+  //     <div></div>
+  //   )
 
-  }
+  // }
   useEffect(() => {
-    const time = setInterval(() => {
-      setNum(num => {
-        console.log(num)
-        if (num < 2) {
-          clearInterval(time)
-        };
-        return num - 1
-      })
-    }, 1000)
-  }, [])
+    if (lgclick) {
+      const time = setInterval(() => {
+        setNum(num => {
+          console.log(num)
+          if (num < 2) {
+            clearInterval(time)
+          };
+          return num - 1
+        })
+      }, 1000)
+    }
+  }, [lgclick])
 
 
   return (

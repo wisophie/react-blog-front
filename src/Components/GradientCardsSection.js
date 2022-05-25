@@ -1,16 +1,9 @@
 import React from 'react'
 import { SectionStyled } from '../Layouts';
-import GradientCard from './GradientCard';
 import MainTitle from './MainTitle';
-import avatar from '../img/avata.jpg';
 import styled from 'styled-components';
 import CtaButton from './CtaButton';
-import person from '../img/person.jpg';
-import person2 from '../img/ai.jpg';
-import bitcoin2 from '../img/coin2.jpg';
-import bitcoin from '../img/coin.jpg';
-import person3 from '../img/person3.jpg';
-import computer from '../img/computer.jpg';
+
 
 
 function GradientCardsSection() {

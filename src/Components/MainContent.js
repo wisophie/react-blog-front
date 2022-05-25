@@ -44,8 +44,8 @@ function MainContent() {
                         The Best Place to Collect Thoughts <span className='GradientText'>学会像AI一样思考</span>
                     </animated.h1>
                     <animated.p style={animatedTexts[2]} className='ptext'>
-                        这是一个人工智能时代，这里有UP主的想法和生活点滴。
-                        这是一个全响应式的网站,功能依然在添加中,敬请期待。
+                        这是一个人工智能时代，这里有UP主的想法和工作点滴。
+                        这是一个全响应式的网站，功能依然在添加中，敬请期待。
 
                     </animated.p>
                     <animated.div style={animatedTexts[3]} className="btns-con">
@@ -57,19 +57,19 @@ function MainContent() {
                     {/* <img src={res} alt="" /> */}
                     <Carousel autoplay>
                         <div className='Carouselone'>
-                            <img src={res} ></img>
+                            <img src={res} alt=''></img>
                             {/* <h1>响应式网页设计 <br />
                                 ----Responsive Web Design----</h1> */}
 
                         </div>
                         <Link to='/projects'><div className='Carouselone Carouseltwo'>
-                            <img src={lichatjp} ></img>
+                            <img src={lichatjp} alt=''></img>
                         </div></Link>
                         <div className='Carouselone Carouselthree'>
-                            <img src={lichatjp} ></img>
+                            <img src={lichatjp} alt=''></img>
                         </div>
                         <div className='Carouselone Carouselfour'>
-                            <img src={AIvirus} ></img>
+                            <img src={AIvirus} alt=''></img>
                         </div>
                     </Carousel>
                 </div>
@@ -203,7 +203,6 @@ const MainContentStyled = styled.div`
         /* justify-content:space-around; */
          .ptext{
                 font-size:0.9rem;
-                border:1px solid red;
             }
             .btns-con{
             flex-flow: column;

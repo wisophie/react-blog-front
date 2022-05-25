@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export default function CommentsForm() {
   const [error, setError] = useState(false);
