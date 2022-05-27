@@ -2,8 +2,37 @@ import React from 'react'
 import styled from 'styled-components';
 
 function CtaButton({ name }) {
+
+
+    //缓动导航栏
+    var scrollTopSmooth = function (position) {
+        // 不存在原生`requestAnimationFrame`，用`setTimeout`模拟替代
+        if (!window.requestAnimationFrame) {
+            window.requestAnimationFrame = function (cb) {
+                return setTimeout(cb, 17);
+            };
+        }
+        // 当前滚动高度
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        // step
+        var step = function () {
+            var distance = position - scrollTop;
+            scrollTop = scrollTop + distance / 5;
+            if (Math.abs(distance) < 1) {
+                window.scrollTo(0, position);
+            } else {
+                window.scrollTo(0, scrollTop);
+                requestAnimationFrame(step);
+            }
+        };
+        step();
+    }
+    const goTag = () => {
+
+        window.scrollTo(0, 1000)
+    }
     return (
-        <CtaButtonStyled>
+        <CtaButtonStyled onClick={() => scrollTopSmooth(800)}>
             {name}
         </CtaButtonStyled>
     )

@@ -5,6 +5,6 @@ const app = express()
 app.use(express.static('./build'))
 
 
-app.listen(8086, () => {
+app.listen(80, () => {
   console.log('exress server is running')
 })

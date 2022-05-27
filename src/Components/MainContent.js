@@ -7,9 +7,9 @@ import SmallHeading from './SmallHeading';
 import { useTrail, animated } from "react-spring";
 import { Carousel } from 'antd';
 import res from '../img/res.jpg'
-import AIvirus from '../img/AIvirus.jpg'
+import coin2 from '../img/coin2.jpg'
 import lichatjp from '../img/lichat.jpg'
-
+import blog from '../img/blog.jpg';
 function MainContent() {
     // animation
     const animatedTexts = useTrail(5, {
@@ -22,6 +22,11 @@ function MainContent() {
         },
         // delay: 300,
     });
+    const goTag = () => {
+
+        window.scrollTo(0, 500)
+        console.log('500')
+    }
     // const contentStyle = {
     //     height: '360px',
     //     color: '#fff',
@@ -56,21 +61,21 @@ function MainContent() {
                 <div className="right">
                     {/* <img src={res} alt="" /> */}
                     <Carousel autoplay>
-                        <div className='Carouselone'>
+                        <Link to='/blogarticles'><div className='Carouselone'>
                             <img src={res} alt=''></img>
                             {/* <h1>响应式网页设计 <br />
                                 ----Responsive Web Design----</h1> */}
 
-                        </div>
+                        </div></Link>
                         <Link to='/projects'><div className='Carouselone Carouseltwo'>
                             <img src={lichatjp} alt=''></img>
                         </div></Link>
-                        <div className='Carouselone Carouselthree'>
-                            <img src={lichatjp} alt=''></img>
-                        </div>
-                        <div className='Carouselone Carouselfour'>
-                            <img src={AIvirus} alt=''></img>
-                        </div>
+                        <Link to='/blogarticles'><div className='Carouselone Carouselthree'>
+                            <img src={coin2} alt=''></img>
+                        </div></Link>
+                        <Link to='/projects'><div className='Carouselone Carouselfour'>
+                            <img src={blog} alt=''></img>
+                        </div></Link>
                     </Carousel>
                 </div>
             </div >
@@ -150,6 +155,16 @@ const MainContentStyled = styled.div`
             .Carouselone.Carouseltwo{
                 &::after {
                     content: '即时通讯移动端项目-立聊lichat';
+                }
+            }
+            .Carouselone.Carouselthree{
+                &::after {
+                    content: '像AI一样思考';
+                }
+            }
+            .Carouselone.Carouselfour{
+                &::after {
+                    content: 'React个人博客项目';
                 }
             }
         }

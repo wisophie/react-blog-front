@@ -13,7 +13,7 @@ function DemonstrationSection() {
         <DemonstrationSectionStyled>
             <SectionStyled>
                 <div className="title-con">
-                    <MainTitle title={'Live Projects'} subtitle={'Live Projects'} para={''} />
+                    {/* <MainTitle title={'Live Projects'} subtitle={'Live Projects'} para={''} /> */}
                 </div>
 
                 <div className="gradient-cards-con">

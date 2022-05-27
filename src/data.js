@@ -1,29 +1,32 @@
 import avatar1 from './img/avata.jpg';
 import lichat from './img/lichat.jpg';
+import net163jp from './img/net163jp.jpg'
+import itjp from './img/itjp.jpg'
+import lichatserver from './img/lichatserver.jpg'
 const data = [
     {
         id: 1,
         title: 'lichat app',
         image: lichat,
-        content: 'Sentient beings, stubbornly alive, the pursuit of sweet love, marriage, career success, are in order to find the fragrance of the soul - happiness.Happiness is god throws a piece of the earth to think about the most bait, not to get, it makes you miss, once you get, and let you feel taste.'
+        content: 'Lichat instant messaging software, uniapp as the front end, nodejs as the server side, and the database is mongodb, which can realize one-to-one single chat, and can send text, emoticons, pictures, etc.'
     },
     {
         id: 2,
-        title: 'light of wisdom.',
-        image: avatar1,
-        content: 'Pain is one of the most insidious gifts of the creator. It comes, sometimes as a reminder of happiness, sometimes as a hint of genius. To tell you that you are bearing the burden of the world.In this world, every heart has its own pain and happiness.'
+        title: 'ITIKU',
+        image: itjp,
+        content: 'An IT-themed exam question bank to practice mobile software.'
     },
     {
         id: 3,
-        title: 'Success angel.',
-        image: avatar1,
-        content: 'The door of success is mostly open, as long as you brave to knock, success will be warmly to meet you. The secret of success is to hold fast to a goal.'
+        title: 'NetEase Yanxuan H5.',
+        image: net163jp,
+        content: 'An imitation NetEase Yanxuan H5 mobile front-end project, which simply realizes the functions of registration and login, classified display, shopping cart settlement and other functions.'
     },
     {
         id: 4,
-        title: 'Sarah Doe',
-        image: avatar1,
-        content: 'Success is an aristocratic angel.'
+        title: 'Lichat app server',
+        image: lichatserver,
+        content: 'The server side of Lichat app is implemented based on nodejs, and the database is mongodb.'
     }
 ]
 

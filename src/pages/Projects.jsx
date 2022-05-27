@@ -85,8 +85,8 @@ export default function Projects() {
   const [state, toggle] = useState(true)
   const [state1, toggle1] = useState(true)
   const [state2, toggle2] = useState(true)
-  const lichaturl = "http://www.wispw.com:8083"
-  const yuantiku = "http://localhost:3001/"
+  const lichaturl = "http://www.wispw.com:8086"
+  const yuantiku = "http://www.wispw.com:8083"
   const net163 = "http://www.wispw.com:8084"
   const personalblog = "/home"
   const { x } = useSpring({
@@ -177,6 +177,7 @@ export default function Projects() {
                     <iframe className='iframe' width='425' height='600' src="http://www.wispw.com:8083" style={{ background: 'white', }} ></iframe>
                   </div>
                 </Modal> */}
+                <a href="www.wispw.com:8086" target="_blank" rel="noopener noreferrer">www.wispw.com:8086</a>
               </div>
 
               <div className='techused'>
@@ -217,15 +218,15 @@ export default function Projects() {
 
             </div>
           </div></div>
-          <div className='items'> <div className='item'>
+          {/* <div className='items'> <div className='item'>
 
-          </div></div>
+          </div></div> */}
         </div>
         <div className='col' style={{ width: ' 33.3333%' }}>
           <div className='items'>
             <div className='item'>
               <img className='lichatlogo' src={fast} alt="" />
-              <h4>IT题库练习H5移动端</h4>
+              <h4>ITIKU爱题库H5移动端</h4>
               <div></div>
               <div><Image src={itjp} alt="" /></div>
               <div className='discription'><p>一个以IT为主题的考试题库练习移动端软件。</p></div>
@@ -257,7 +258,7 @@ export default function Projects() {
             <h4>个人博客站</h4>
             <div></div>
             <div className='jp'><Image src={blog} /></div>
-            <div className='discription'><p>基于REACT的个人博客，React做前端，graphQL,nodejs做服务器端，数据库为mongodb，实现了全响应式的现代网页布局。</p></div>
+            <div className='discription'><p>基于REACT的个人博客，React做前端，graphQL,nodejs做服务器端，数据库为mongodb，实现了全响应式的网页布局。</p></div>
             <div className='linkwrap' onMouseEnter={() => toggle(!state)}
 
             >
@@ -288,7 +289,7 @@ export default function Projects() {
               </div>
             </div>
           </div></div>
-          <div className='items'><div className='item'></div></div>
+          {/* <div className='items'><div className='item'></div></div> */}
         </div>
         <div className='col' style={{ width: ' 33.3333%' }}>
           <div className='items'>
@@ -321,8 +322,11 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <div className='items'><div className='item'></div></div>
-          <div className='items'><div className='item'></div></div>
+          <div className='items'>
+            <div className='mores'><span>更多</span>
+            </div>
+          </div>
+          {/* <div className='items'><div className='item'></div></div> */}
         </div>
       </div>
 
@@ -424,6 +428,7 @@ const ProjectsStyled = styled.div`
                         transform: translateY(-3px) ;
                        
                     }
+       
       /* border:1px solid red; */
       .lichatlogo{
         height: 80px;
@@ -449,7 +454,10 @@ const ProjectsStyled = styled.div`
         text-align: left;
         padding:0 1rem;
       }
-      .link{
+      .linkwrap{
+        color:black;
+        font-size:1rem;
+        .link{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -460,6 +468,9 @@ const ProjectsStyled = styled.div`
           cursor:pointer;
         }
       }
+      }
+      
+      
       .server{
         &:hover{
                         
@@ -490,9 +501,24 @@ const ProjectsStyled = styled.div`
         
       }
     }
+    .mores{
+        background: rgb(21, 160, 0); 
+        font-size:2rem;
+        padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 3px 5px 0 rgba(0,0,0,.4);
+      transition: transform .3s;
+      cursor: pointer;
+      &:hover{
+                        transform: translateY(-3px) ;
+                       
+                    }
+      }
   }
 }
 }
+
 .h2{
   font-size:2rem;
 }
