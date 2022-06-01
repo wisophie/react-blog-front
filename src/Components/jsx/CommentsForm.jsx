@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { submitComment } from '../../services';
+import { Formdatacontext } from '../../pages/Article';
 
 export default function CommentsForm({ slug }) {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [formData, setFormData] = useState({ name: null, email: null, comment: null, storeData: false });
-
+  const { setFormData2 } = useContext(Formdatacontext)
   useEffect(() => {
     setLocalStorage(window.localStorage);
     const initalFormData = {
@@ -33,6 +34,8 @@ export default function CommentsForm({ slug }) {
   };
 
   const handlePostSubmission = () => {
+    // console.log(formData)
+    setFormData2(formData)
     setError(false);
     const { name, email, comment, storeData } = formData;
     if (!name || !email || !comment) {
@@ -56,7 +59,9 @@ export default function CommentsForm({ slug }) {
 
     submitComment(commentObj)
       .then((res) => {
-        if (res.createComment) {
+
+        if (res.data.createComment) {
+
           if (!storeData) {
             formData.name = '';
             formData.email = '';
@@ -93,8 +98,8 @@ export default function CommentsForm({ slug }) {
       </div>
       {error && <p className="text-xs text-red-500">All fields are mandatory</p>}
       <div className="mt-8">
-        <button type="button" onClick={handlePostSubmission} className="transition duration-500 ease hover:bg-indigo-900 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">发布评论</button>
-        {showSuccessMessage && <span className="text-xl float-right font-semibold mt-3 text-green-500">Comment submitted for review</span>}
+        <div type="button" onClick={handlePostSubmission} className="transition duration-500 ease hover:bg-indigo-900 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">发布评论</div>
+        {showSuccessMessage && <span className="text-xl float-right font-semibold mt-3 text-green-500">发布成功</span>}
       </div>
     </div>
   )

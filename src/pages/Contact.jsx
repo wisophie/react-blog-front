@@ -29,7 +29,7 @@ export default function Contact() {
                 <div className="row">
                   <div className="col-4 p-t-10 p-b-10">● 严立 | 男 | 1987</div>
                   <div className="col-4 p-t-10 p-b-10 ">● 本科 | 浙江工业大学 | 信息与计算科学</div>
-                  <div className="col-4 p-t-10 p-b-10 ">● 前端开发 | 3 年工作经验</div>
+                  <div className="col-4 p-t-10 p-b-10 ">● 前端开发 | 4 年工作经验</div>
                 </div>
                 <div className="row">
                   <div className="col-4 p-t-10 p-b-10">● 期望职位：Web前端开发</div>
@@ -55,11 +55,15 @@ export default function Contact() {
             <div className="boxes default m-b-20">
               <div className="box bg-gray-lightest">
                 ●
-                <a href=""> 个人博客 - 使用 React + Redux + Ts + Antd + Mongodb 构建的个人网站，个人简历、文章及项目展示。</a>
+                <a href=""> 个人博客 - 使用 React + Hooks + Antd + Graphql + Mongodb 构建的个人网站，个人简历、文章及项目展示。</a>
               </div>
               <div className="box bg-gray-lightest">
                 ●
-                <a href=""> 立聊即时通讯软件，uniapp做前端，nodejs做服务器端，数据库为mongodb，可实现一对一单聊，可发送文字、表情、图片等。 </a>
+                <a href=""> 立聊即时通讯软件项目，uniapp做前端，nodejs做服务器端，数据库为mongodb，结合了websocket，可实现一对一实时单聊，可发送文字、表情、图片等。 </a>
+              </div>
+              <div className="box bg-gray-lightest">
+                ●
+                <a href=""> ITIKU爱题库H5移动端以及仿网易严选H5移动端项目，两个分别基于React和Vue框架，基于后端接口实现了完整的前端页面。</a>
               </div>
               {/* <div className="box bg-gray-lightest">
                 ●
@@ -77,41 +81,86 @@ export default function Contact() {
                 ● 前端工具：Webpack/Sass/Less
               </div>
               <div className="box bg-gray-lightest">
-                ● 后端框架：NodeJS/Koa
+                ● 后端框架：NodeJS
               </div>
               <div className="box bg-gray-lightest">
                 ● 数据库相关：MongoDB/Mysql
               </div>
-              <div className="box bg-gray-lightest">
-                ● 版本管理工具：Git/GitLab
-              </div>
+              <p className="m-t-0 box bg-gray-lightest"><b>熟练掌握React，Vue.js，uniapp网页和移动端开发。熟练编写html页面，js前后端联调，熟练使用git。熟悉一定的后端知识，可基于linux搭建nodejs服务器，掌握Mysql，mongodb，Redis数据库操作。
+                英语6级，熟练读写。</b></p>
             </div>
           </section>
           <section>
             <h1 className="f-s-18 f-w-900 m-b-20">工作经历</h1>
             <div className="boxes default m-b-20">
               <div className="box bg-gray-lightest">
-                ● 中国电信股份有限公司宁波分公司（ 2020 年 3 月 ~ 至今 ）
+                ● 中国电信股份有限公司宁波分公司（ 2019年 3 月 ~ 至今 ）
               </div>
               <div className="box bg-gray-lightest">
-                <p className="m-t-0"><b>混合式移动APP、工具类app开发、后台项目页面开发与维护</b></p>
-                <p>- 项目优化，代码精简，组件化、模块化开发</p>
-                <p>- 涉及功能：登录注册验证、用户权限管理、全局状态与路由管理、树状数据管理、列表数据展示、表单验证、后端接口对接、前后端联调等</p>
+                <p className="m-t-0"><b>web及H5移动端app、后台项目页面开发与维护</b></p>
+                <p>- 参与项目需求研讨、项目架构、技术选型</p>
+                <p>- 涉及功能：登录注册验证、用户权限管理、全局状态与路由管理、列表数据展示、表单验证、后端接口对接、前后端联调等</p>
               </div>
             </div>
 
             <div className="boxes default m-b-20">
               <div className="box bg-gray-lightest">
-                ● 宁波宏亮网络科技有限公司 （2018 年 10 月 ~ 2020年 3 月  ）
+                ● 宁波宏亮网络科技有限公司 （2017 年 10 月 ~ 2019年 3 月  ）
               </div>
               <div className="box bg-gray-lightest">
-                <p className="m-t-0"><b>公司后台管理项目更新与维护,微信小程序开发</b> </p>
+                <p className="m-t-0"><b>公司后台管理项目更新与维护，微信小程序开发。</b> </p>
                 <p> - JQ + CSS3 + Bootstrap + Html5</p>
                 <p>- 负责官网静态页开发及简单交互</p>
                 <p>- 负责网站移动端、各浏览器适配网页适配</p>
               </div>
             </div>
+            <div className="boxes default m-b-20">
+              <div className="box bg-gray-lightest">
+                ● 中国电信股份有限公司宁海分公司（ 2010 年 3 月 ~ 2017年 10 月 ）
+              </div>
+              <div className="box bg-gray-lightest">
+                <p className="m-t-0"><b>运维网络工程师</b></p>
+                <p>- 负责企业的网络规划和交换机路由器EPON等终端的远程配置管理，企业内网交互页面的开发，以及linux后端服务器的部署、运行、维护、管理工作。</p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h1 className="f-s-18 f-w-900 m-b-20">公司项目</h1>
+            <div className="boxes default m-b-20">
+              <div className="box bg-gray-lightest">
+                ● 智慧食堂H5移动端。
+              </div>
+              <div className="box bg-gray-lightest">
+                <p className="m-t-0"><b>智慧食堂是宁波电信旗下一款用于分公司人员食堂充值刷卡的软件，整合了简单的商城购物下单功能。</b></p>
+                <p>工作内容：</p>
+                <p>-项目基础框架搭建，核心功能开发。</p>
+                <p>-采用组件化和函数式编程，对公共模块进行抽离封装。</p>
+                <p>-负责功能：登录验证流程、购物车模块、付款码显示、订单和充值记录展示、人脸照片采集等。</p>
+              </div>
+            </div>
+
+            <div className="boxes default m-b-20">
+              <div className="box bg-gray-lightest">
+                ● 铸铅行动web及h5移动端。
+              </div>
+              <div className="box bg-gray-lightest">
+                <p className="m-t-0"><b>铸铅行动是宁波电信旗下用于前端销售人员进行沿街营销录入店铺的软件，可以再后台进行数据的汇总和分析。</b> </p>
+                <p>工作内容：</p>
+                <p>- 采用Vue + Axios + Echarts + elementUI进行开发</p>
+                <p>- 负责登录验证、构建店铺详情采集页面、对接处理数据、真机调试及适配。</p>
+              </div>
+            </div>
             ......
+          </section>
+          <section>
+            <h1 className="f-s-18 f-w-900 m-b-20">自我评价</h1>
+            <div className="boxes default m-b-20">
+              <div className="box bg-gray-lightest">
+
+                <p>崇尚技术，学习能力强，热衷不断接受新知识并学会举一反三，热衷追求细节上的极致。</p>
+
+              </div>
+            </div>
           </section>
         </main>
       </div>

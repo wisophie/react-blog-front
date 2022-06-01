@@ -10,7 +10,9 @@ function SmallHeading({ title, identifier }) {
 }
 
 const SmallHeadingStyled = styled.div`
+margin-top:2.5rem;
     h3{
+        
         background: linear-gradient(120deg, rgb(132, 111, 244), rgb(241, 118, 116));
         background-clip: text;
         display: inline-block;
@@ -20,7 +22,6 @@ const SmallHeadingStyled = styled.div`
         font-weight:700;
         @media (max-width:992px){
             font-size:1.3rem;
-            
             }
     }
     

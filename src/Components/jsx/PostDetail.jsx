@@ -3,7 +3,7 @@ import React from 'react';
 import moment from 'moment';
 
 const PostDetail = ({ post }) => {
-  console.log(post.content.raw.children[1])
+  // console.log(post.content.raw.children[1])
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
     // console.log(post.featuredImage.url)

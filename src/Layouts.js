@@ -7,7 +7,7 @@ const InnerLayout = styled.div`
     margin:0 auto;
 `;
 const InnerLayout2 = styled.div`
-    padding: 4rem 15rem;
+    padding: 3rem 15rem;
 
 `;
 const SectionStyled = styled.section`

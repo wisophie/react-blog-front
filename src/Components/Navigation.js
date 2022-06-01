@@ -274,6 +274,7 @@ const NavigationStyled = styled.nav`
    position:fixed;
    width: 100%;
    z-index:10;
+   /* border:1px solid red; */
    /* &::after{
         content:"";
         position:absolute;
@@ -309,7 +310,7 @@ const NavigationStyled = styled.nav`
 }
 .kuang{
     @media (max-width:992px){
-        min-height: 8vh;
+        min-height: 9vh;
     }
     @media (min-width:992px){
         min-height: 10vh;
@@ -344,8 +345,8 @@ const NavigationStyled = styled.nav`
                 width: 90%;
                 font-size:1.4rem;
                 margin-bottom:0.3rem;
-                background: rgba(255, 255, 255, 0.5);
-                backdrop-filter:blur(3px);
+                background: rgba(151, 40, 100, 1);
+                backdrop-filter:blur(2px);
                 /* border:1px solid red; */
                 
                 /* display: flex; */

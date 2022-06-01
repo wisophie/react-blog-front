@@ -24,6 +24,9 @@ const MainAreaStyled = styled.header`
     position: relative;
     overflow: hidden;
     /* border:1px solid red; */
+    @media (max-width:992px){
+        height: 92vh;
+    }
     &::after{
         content:"";
         position:absolute;

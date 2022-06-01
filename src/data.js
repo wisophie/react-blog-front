@@ -8,25 +8,25 @@ const data = [
         id: 1,
         title: 'lichat app',
         image: lichat,
-        content: 'Lichat instant messaging software, uniapp as the front end, nodejs as the server side, and the database is mongodb, which can realize one-to-one single chat, and can send text, emoticons, pictures, etc.'
+        content: '立聊即时通讯软件，uniapp做前端，nodejs做服务器端，数据库为mongodb，可实现一对一单聊，可发送文字、表情、图片等。'
     },
     {
         id: 2,
         title: 'ITIKU',
         image: itjp,
-        content: 'An IT-themed exam question bank to practice mobile software.'
+        content: '一个以IT为主题的考试题库练习移动端软件。'
     },
     {
         id: 3,
-        title: 'NetEase Yanxuan H5.',
+        title: '仿网易严选H5移动端',
         image: net163jp,
-        content: 'An imitation NetEase Yanxuan H5 mobile front-end project, which simply realizes the functions of registration and login, classified display, shopping cart settlement and other functions.'
+        content: '一个仿网易严选H5移动端前端项目，简单的实现了注册登录，分类展示，购物车结算等功能。'
     },
     {
         id: 4,
-        title: 'Lichat app server',
+        title: '立聊App服务器端',
         image: lichatserver,
-        content: 'The server side of Lichat app is implemented based on nodejs, and the database is mongodb.'
+        content: '立聊app服务器端，基于nodejs实现，数据库为mongodb。'
     }
 ]
 

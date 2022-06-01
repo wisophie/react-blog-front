@@ -46,7 +46,7 @@ function MainContent() {
 
                     <animated.h1 style={animatedTexts[1]} className='font-bold'>
                         Hello! 我是潜心钻研的小严同学
-                        The Best Place to Collect Thoughts <span className='GradientText'>学会像AI一样思考</span>
+                        This the Best Place to Collect Thoughts <span className='GradientText'>学会像AI一样思考</span>
                     </animated.h1>
                     <animated.p style={animatedTexts[2]} className='ptext'>
                         这是一个人工智能时代，这里有UP主的想法和工作点滴。
@@ -55,7 +55,10 @@ function MainContent() {
                     </animated.p>
                     <animated.div style={animatedTexts[3]} className="btns-con">
                         <CtaButton name={'discover more'} />
-                        <CtaButton name={'get help'} />
+                        {/* <div className='help' >
+                            <CtaButton name={'get help'} />
+                        </div> */}
+
                     </animated.div>
                 </div>
                 <div className="right">
@@ -186,7 +189,7 @@ const MainContentStyled = styled.div`
                 
                 align-items: flex-start;
                 margin-top: 3rem;
-                
+                /* border:1px solid red; */
             }
         }
         .right{
@@ -195,6 +198,7 @@ const MainContentStyled = styled.div`
             flex-direction: column;
             width:60%;
             height:100%;
+            /* margin:0 auto 1rem;  */
             .ant-carousel{
                 width:80%;
                 margin:0 auto;
@@ -209,9 +213,12 @@ const MainContentStyled = styled.div`
         @media (max-width:992px) {
             flex-flow: column;
             flex-direction:column-reverse;
+            justify-content:space-around;
         width:100%;
             
         .left{
+            /* display:flex; */
+            /* flex:1; */
         font-size:1.1rem;
         max-height:76%;
         min-height:60%;
@@ -219,20 +226,60 @@ const MainContentStyled = styled.div`
          .ptext{
                 font-size:0.9rem;
             }
+            h1{
+                padding: 1.4rem 0;
+            }
             .btns-con{
             flex-flow: column;
-            margin-top: 2rem;
+            margin-top: 1rem;
+            .help{
+                display:none;
+            }
         }
+       
         }
         
         .right{
-            max-height:40%;
+            max-height:30%;
             width:100%;
             .ant-carousel{
                 width:100%;
                 height:300px;
                 /* margin:0 auto; */
-                border:1px solid red;
+                /* border:1px solid red; */
+                .Carouselone{
+                    &::after {
+                    content: '响应式网页设计－Responsive Web Design';
+                    position: absolute;
+                    bottom: 0;
+                    left:0;
+                    padding: 6px 8px;
+                    width: 100%;
+                    height:40px;
+                    text-align:center;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #fff;
+                    background-color: rgba(0,0,0,0.5);
+                    box-sizing: border-box;
+                }
+               
+                }
+                .Carouselone.Carouseltwo{
+                &::after {
+                    content: '即时通讯移动端项目-立聊lichat';
+                }
+            }
+            .Carouselone.Carouselthree{
+                &::after {
+                    content: '像AI一样思考';
+                }
+            }
+            .Carouselone.Carouselfour{
+                &::after {
+                    content: 'React个人博客项目';
+                }
+            }
             }
         }
 }

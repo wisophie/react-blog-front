@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components';
-import projectspic from '../img/img-2.jpg';
+import projectspic from '../img/img-8.jpg';
 import iphone from '../img/browser_big.png';
 import linklogo from '../img/link.0d16a785.svg'
 import { useSpring, animated } from '@react-spring/web'
@@ -147,10 +147,13 @@ export default function Projects() {
       {/* <numContext.Provider value={{ num, setNum }}>
         
       </numContext.Provider> */}
-      <div className='Projects'>
-        <h1>PROJECTS</h1>
-        <h4 class="typing typing-item">个人项目</h4>
+      <div className='wrap'>
+        <div className='Projects'>
+          <h1>PROJECTS</h1>
+          <h4 class="typing typing-item">个人项目</h4>
+        </div>
       </div>
+
       <div className='main'>
         <div className='col' style={{ width: '33.3333%' }}>
           <div className='items'>
@@ -363,24 +366,37 @@ const ProjectsStyled = styled.div`
       .jp{
         display:flex;
       }
-    
+      .wrap{
+        padding:0 1.4rem;
+      }
   .Projects {
     display: flex;
   align-items: flex-end;
   justify-content: center;
   height: 12vh;
-  font-size: 5vw;
+  /* font-size: 4vw; */
   border-radius:10px;
   background-image: url(${projectspic});
-  background-position: center;
+  background-position:center;
   background-size: cover;
   background-repeat: no-repeat;
   text-shadow: 0 1px 1px rgba(0,34,69,.6);
+  
   h1{
+    @media (max-width:992px){
+      line-height:2.1rem;
+    font-size: 1.7rem;
+    }
     color: #fff;
-    line-height:5vw;
+    line-height:4vw;
+    font-size: 4vw;
   }
   h4{
+    @media (max-width:992px){
+    line-height:1.5rem;
+    font-size: 1rem;
+    }
+    line-height:3vw;
     font-size: 2vw;
     color: #fff;
   }
@@ -392,9 +408,10 @@ const ProjectsStyled = styled.div`
       animation: type 0.4s steps(50, end) forwards;
       }
       .typing-item{
-      text-align: center;
+        margin-left:0.5rem;
+      text-align: left;
       color: #fff;
-      width:15%;
+      width:22%;
       white-space:nowrap;
       overflow:hidden;
       }
@@ -407,7 +424,7 @@ const ProjectsStyled = styled.div`
         }
         }
 .main{
- 
+  /* border:1px solid red;  */
   display: flex;
   height:100vh;
   .col{
@@ -523,6 +540,9 @@ const ProjectsStyled = styled.div`
   font-size:2rem;
 }
 @media (max-width:992px){
+  .wrap{
+        padding:0 0;
+      }
   .main{
     display:flex;
     flex-direction:column;
