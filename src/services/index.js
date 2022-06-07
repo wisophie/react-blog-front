@@ -137,11 +137,7 @@ export const getFeaturedPosts = async () => {
 };
 
 export const submitComment = async (obj) => {
-  const query = gql`
-    mutation CreateComment($name: String!, $email: String!, $comment: String!, $slug: String!) {
-      createComment(data: {name: $name, email: $email, comment: $comment, post: {connect: {slug: $slug}}}) { id }
-    }
-  `;
+
   const result = await fetch(graphqlAPI, {
     method: 'POST',
     headers: {
@@ -157,9 +153,9 @@ export const submitComment = async (obj) => {
         slug: obj.slug,
       },
       query: `mutation CreateComment($name: String!, $email: String!, $comment: String!, $slug: String!) {
-      createComment(data: {name: $name, email: $email, comment: $comment, post: {connect: {slug: $slug}}}) { id }
-    }
-  `
+            createComment(data: {name: $name, email: $email, comment: $comment, post: {connect: {slug: $slug}}}) { id }
+          }
+        `
     })
   })
   return result.json();

@@ -51,7 +51,6 @@ function MainContent() {
                     <animated.p style={animatedTexts[2]} className='ptext'>
                         这是一个人工智能时代，这里有UP主的想法和工作点滴。
                         这是一个全响应式的网站，功能依然在添加中，敬请期待。
-
                     </animated.p>
                     <animated.div style={animatedTexts[3]} className="btns-con">
                         <CtaButton name={'discover more'} />
@@ -214,7 +213,7 @@ const MainContentStyled = styled.div`
             flex-flow: column;
             flex-direction:column-reverse;
             justify-content:space-around;
-        width:100%;
+            width:100%;
             
         .left{
             /* display:flex; */
@@ -236,9 +235,7 @@ const MainContentStyled = styled.div`
                 display:none;
             }
         }
-       
-        }
-        
+        } 
         .right{
             max-height:30%;
             width:100%;

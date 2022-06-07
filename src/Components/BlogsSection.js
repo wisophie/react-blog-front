@@ -29,10 +29,6 @@ function BlogsSection() {
                                             <h7 className="user">Creator : {blog.name}
                                             </h7>
                                         </Link>
-
-
-
-
                                     </div>
                                 })
                             }

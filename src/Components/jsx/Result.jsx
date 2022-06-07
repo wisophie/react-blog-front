@@ -9,7 +9,7 @@ export default function Results({ num, setNum, lgclick }) {
   //     <div></div>
   //   )
 
-  // }
+  // } // 不能这么写
   useEffect(() => {
     if (lgclick) {
       const time = setInterval(() => {

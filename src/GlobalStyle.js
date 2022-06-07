@@ -113,6 +113,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
 }
+//进度条样式
 #nprogress .bar {
   position:fixed !important;
 	background: #FF9797 !important;
@@ -132,6 +133,36 @@ const GlobalStyle = createGlobalStyle`
   overflow-y:scroll !important;
   
 }
+.ant-dropdown{   
+                position:fixed;
+                width:500px;
+                height:317px;
+                border-radius:20px;
+                overflow:hidden;
+                /* top: 7.2vh !important; */
+                /* left:58% !important; */
+                /* text-shadow: 0 1px 1px #e0e0e0; */
+                box-shadow: 0 3px 5px 0 rgba(0,0,0,.4);
+                transition:0.5s all ease;
+                .ant-dropdown-menu-item{
+                  img{
+                    width:85px;
+                    height:63px;
+                    border-radius:5px;
+                  }
+                  p{
+                    height:65px;
+                    overflow:hidden;
+                  }
+                
+                }
+            }
+            @media (max-width:992px){
+              .ant-dropdown{
+                display:none;
+              }
+          }
+ 
 
 `;
 

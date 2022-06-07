@@ -27,6 +27,7 @@ const MainAreaStyled = styled.header`
     @media (max-width:992px){
         height: 92vh;
     }
+
     &::after{
         content:"";
         position:absolute;
@@ -37,7 +38,6 @@ const MainAreaStyled = styled.header`
         background:linear-gradient(#ee9ca7,#ee9ca7);
         clip-path:circle(25% at left 126.4%);
         z-index:-1;
-   
     }
    
     .overlay{
@@ -46,7 +46,6 @@ const MainAreaStyled = styled.header`
         position: absolute;
         right: -400px;
         top: -300px;
-        
     }
     video{
         width: 100%;

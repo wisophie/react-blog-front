@@ -62,7 +62,7 @@ const blogs = [
         name: 'Sarah Doe',
         image: ai,
         title: '人类的终极科技目标到底是什么?',
-        code: 'tesla-testing',
+        code: 'civilization',
         category: 'Tech'
     }
 ]

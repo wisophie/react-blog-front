@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
-import time from '../img/time.svg';
-import heart from '../img/heart.svg';
+// import time from '../img/time.svg';
+// import heart from '../img/heart.svg';
 
-function GradientCard({image, avatar, name, price, title, ctaButton}) {
+function GradientCard({ image, avatar, name, price, title, ctaButton }) {
     return (
         <GradientCardStyled>
             <div className="g-card">

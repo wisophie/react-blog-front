@@ -7,7 +7,7 @@ import { App } from '../App'
 // import Activity from '../pages/Activity'
 // import Contact from '../pages/Contact'
 // import Login from '../pages/Login'
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Nprogress } from '../Components/jsx'
 
 const Home = React.lazy(() => import('../pages/Home'));

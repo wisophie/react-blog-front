@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
+import { MeiliSearch } from 'meilisearch'
+import { Dropdown, Menu, Space } from 'antd';
+
 import logo2 from '../img/logo2.png';
 import logo2_1 from '../img/logo2_1.png';
 import { useSpring, a } from "@react-spring/web";
 import { Link, useLocation } from "react-router-dom";
-import { Input, Modal } from 'antd';
+import { Input, Modal, Tooltip } from 'antd';
 const { Search } = Input;
 const onSearch = (value) => console.log(value);
+
+
 // import { Loader } from './jsx';
 
 // let timer = null;
@@ -26,6 +31,13 @@ const onSearch = (value) => console.log(value);
 // }
 
 function Navigation() {
+    const [state, toggle] = useState(false)
+    const [search1, setSearch1] = useState([
+        { title: "无", overview: "无" },
+        { title: "无", overview: "无" },
+        { title: "无", overview: "无" }
+    ])
+
     const location = useLocation();
     console.log(location.pathname)
 
@@ -39,24 +51,73 @@ function Navigation() {
         config: { mass: 5, tension: 500, friction: 80 },
     })
 
-    function warning() {
+    function warning(a) {
         Modal.warning({
             title: '提示',
-            content: '请先登录!',
+            content: a,
         });
     }
 
     //搜索模块
-    const handlesearch = () => {
+    const handlesearch = (e) => {
+        const client = new MeiliSearch({ host: 'http://www.wispw.com:7700', apiKey: '09091726' })
         let user = sessionStorage.getItem('user');
-        if (user) {
+        if (user && e.length > 1) {
             //搜索
-        }
-        else {
-            warning()
-        }
+            document.getElementById('drop').click()
+            // client.index('movie').addDocuments(movies)
+            //   .then((res) => console.log(res))
+            client.index('movie').search(e).then((res) => {
+                console.log(res.hits)
+                setSearch1(search1 => {
+                    console.log(search1)
+                    if (res.hits.length > 2) { return res.hits }
+                    else return [
+                        { title: "无", overview: "无" },
+                        { title: "无", overview: "无" },
+                        { title: "无", overview: "无" }
+                    ]
 
+
+                })
+
+
+            }
+            )
+
+        }
+        else if (!user) {
+            warning('请先登录!')
+        } else if (e.length == 0) {
+            warning('请输入内容!')
+        }
     }
+    const menu = (
+        <Menu className='menu'
+            items={[
+                {
+                    label: <Link to="/BlogArticles"><div>文章标题：{search1[0].title}</div><div><img align='right' src={search1[0].poster} /><p>内容：{search1[0].overview}</p></div></Link>,
+                    key: '0',
+                },
+                {
+                    type: 'divider',
+                },
+                {
+                    label: <Link to="/BlogArticles"><div>文章标题：{search1[1].title}</div><div><img align='right' src={search1[1].poster} /><p>内容：{search1[1].overview}</p></div></Link>,
+                    key: '1',
+                },
+                {
+                    type: 'divider',
+                },
+
+                {
+                    label: <Link to="/BlogArticles"><div>文章标题：{search1[2].title}</div><div><img align='right' src={search1[2].poster} /><p>内容：{search1[2].overview}</p></div></Link>,
+                    key: '2',
+                },
+            ]}
+        />
+
+    );
 
     // let myInterval = null;
 
@@ -120,11 +181,12 @@ function Navigation() {
 
     const handleScroll = (e) => {
         const header = document.getElementById('header')
+        // const dropdown = document.getElementById('drop')
         const kuang = document.getElementsByClassName('kuang')[0]
         const navitems = document.getElementById('nav')
         const goback = document.getElementsByClassName('goback-btn2')[0]
         const navmenu = document.getElementsByClassName('nav-menu')[0];
-        // console.log(navitems)
+        // console.log(dropdown)
         // var sliderbarTop = window.pageYOffset;
         // var sliderbarTop = window.scrollTop;
         // if (click)
@@ -134,6 +196,7 @@ function Navigation() {
         if (document.body.clientWidth >= 992 && window.pageYOffset >= 150 && location.pathname === '/home') { //if语句判断window页面Y方向的位移是否大于或者等于导航栏的height像素值
             header.style.backgroundColor = '#5577AA';
             kuang.style.minHeight = '7vh';
+            // dropdown.style.top = '6vh';
             header.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,.3)';
             // kuang.style.fontSize = '1.2rem';
             // navmenu.style.visibility = 'hidden';
@@ -236,7 +299,20 @@ function Navigation() {
                         <Link to="/contact">Contact</Link>
                     </li>
                     <li>
-                        <Search placeholder="search" onSearch={handlesearch} style={{ width: 180 }} />
+
+                        <Dropdown id='dropdown' overlay={menu} trigger={['click']}>
+                            <a id='drop' onClick={e => e.preventDefault()}>
+
+                                <Space>
+
+                                    <div className='space'></div>
+                                </Space>
+                            </a>
+
+                        </Dropdown>
+                        <Tooltip placement="bottom" color='#2db7f5' title='一个搜索功能示例，可输入英文内容'>
+                            <Search placeholder="search" onSearch={(e) => handlesearch(e)} style={{ width: 180 }} />
+                        </Tooltip>
                     </li>
                     <div className="primary-btn" ><Link to="/login">GET CONNECTED</Link></div>
                     <div className="primary-btn2" onClick={handleClick}>MENU</div>
@@ -290,6 +366,16 @@ const NavigationStyled = styled.nav`
     transition:0.4s;
     
     //搜索栏样式
+   
+    .space{
+        position:absolute;
+        /* left:1330px; */
+        border:1px solid red;
+        width:2px;
+        height:20px;
+        z-index:20000;
+        display:none;
+    }
 .ant-input-group-wrapper{
     /* border:1px solid red; */
     /* border-radius:10px; */
@@ -456,7 +542,8 @@ const NavigationStyled = styled.nav`
     visibility:hidden;
     }
     .nav-items{
-       
+            
+        
        display: flex;
        align-items: center;
        transition:0.3s;
