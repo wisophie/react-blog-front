@@ -29,11 +29,11 @@ export default function Contact() {
                 <div className="row">
                   <div className="col-4 p-t-10 p-b-10">● 严立 | 男 | 1987</div>
                   <div className="col-4 p-t-10 p-b-10 ">● 本科 | 浙江工业大学 | 信息与计算科学</div>
-                  <div className="col-4 p-t-10 p-b-10 ">● 前端开发 | 4 年工作经验</div>
+                  <div className="col-4 p-t-10 p-b-10 ">● 3 年前端开发经验</div>
                 </div>
                 <div className="row">
-                  <div className="col-4 p-t-10 p-b-10">● 期望职位：高级前端开发</div>
-                  <div className="col-4 p-t-10 p-b-10 ">● 期望工作方式：远程</div>
+                  <div className="col-4 p-t-10 p-b-10">● 期望职位：前端开发</div>
+                  <div className="col-4 p-t-10 p-b-10 ">● 期望工作地点：宁波</div>
                 </div>
               </div>
               {/* <div className="box bg-gray-lightest">
@@ -63,7 +63,7 @@ export default function Contact() {
               </div>
               <div className="box bg-gray-lightest">
                 ●
-                <a href=""> ITIKU爱题库H5移动端以及仿网易严选H5移动端项目，两个分别基于React和Vue框架，基于后端接口实现了完整的前端页面。</a>
+                <a href=""> ITIKU爱题库H5移动端项目，基于React框架，基于后端接口实现了完整的前端页面。</a>
               </div>
               {/* <div className="box bg-gray-lightest">
                 ●
@@ -94,29 +94,19 @@ export default function Contact() {
             <h1 className="f-s-18 f-w-900 m-b-20">工作经历</h1>
             <div className="boxes default m-b-20">
               <div className="box bg-gray-lightest">
-                ● 中国电信股份有限公司宁波分公司（ 2019年 3 月 ~ 至今 ）
+                ● 中国电信股份有限公司宁海分公司（ 2019年 3 月 ~ 至今 ）
               </div>
               <div className="box bg-gray-lightest">
                 <p className="m-t-0"><b>web及H5移动端app、后台项目页面开发与维护</b></p>
-                <p>- 参与项目需求研讨、项目架构、技术选型</p>
+                <p>- JQuery+uniapp+Vue</p>
                 <p>- 涉及功能：登录注册验证、用户权限管理、全局状态与路由管理、列表数据展示、表单验证、后端接口对接、前后端联调等</p>
               </div>
             </div>
 
+
             <div className="boxes default m-b-20">
               <div className="box bg-gray-lightest">
-                ● 宁波宏亮网络科技有限公司 （2017 年 10 月 ~ 2019年 3 月  ）
-              </div>
-              <div className="box bg-gray-lightest">
-                <p className="m-t-0"><b>公司后台管理项目更新与维护，微信小程序开发。</b> </p>
-                <p> - JQ + CSS3 + Bootstrap + Html5</p>
-                <p>- 负责官网静态页开发及交互</p>
-                <p>- 负责网站移动端、各浏览器适配网页适配</p>
-              </div>
-            </div>
-            <div className="boxes default m-b-20">
-              <div className="box bg-gray-lightest">
-                ● 中国电信股份有限公司宁海分公司（ 2010 年 3 月 ~ 2017年 10 月 ）
+                ● 中国电信股份有限公司宁海分公司（ 2010 年 3 月 ~ 2019年 3 月 ）
               </div>
               <div className="box bg-gray-lightest">
                 <p className="m-t-0"><b>运维网络工程师</b></p>
@@ -157,7 +147,7 @@ export default function Contact() {
             <div className="boxes default m-b-20">
               <div className="box bg-gray-lightest">
 
-                <p>迎难而上，学习能力强，热衷不断接受新知识，追求极致细节。</p>
+                <p>热爱挑战，学习能力强，热衷不断接受新知识，追求极致细节。</p>
 
               </div>
             </div>

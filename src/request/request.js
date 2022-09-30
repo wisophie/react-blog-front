@@ -4,7 +4,7 @@ import 'nprogress/nprogress.css'
 
 // 配置项
 const axiosOption = {
-  baseURL: 'http://124.223.172.34:3000',
+  baseURL: 'https://www.wispw.com:3001',
   timeout: 5000
 }
 

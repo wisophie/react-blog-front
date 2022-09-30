@@ -60,7 +60,7 @@ function Navigation() {
 
     //搜索模块
     const handlesearch = (e) => {
-        const client = new MeiliSearch({ host: 'http://www.wispw.com:7700', apiKey: '09091726' })
+        const client = new MeiliSearch({ host: 'https://www.wispw.com:7701', apiKey: '09091726' })
         let user = sessionStorage.getItem('user');
         if (user && e.length > 1) {
             //搜索
@@ -77,11 +77,7 @@ function Navigation() {
                         { title: "无", overview: "无" },
                         { title: "无", overview: "无" }
                     ]
-
-
                 })
-
-
             }
             )
 
@@ -284,19 +280,19 @@ function Navigation() {
                 <ul className="nav-items" id='nav'>
 
                     <li>
-                        <Link to="/home">Home</Link>
+                        <Link to="/home">首页</Link>
                     </li>
                     <li>
-                        <Link to="/blogArticles">Articles</Link>
+                        <Link to="/blogArticles">我的博文</Link>
                     </li>
                     <li>
-                        <Link to="/projects">Projects</Link>
+                        <Link to="/projects">我的案例</Link>
                     </li>
                     {/* <li>
                         <Link to="/activity">Activity</Link>
                     </li> */}
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact">联系我</Link>
                     </li>
                     <li>
 
@@ -314,27 +310,27 @@ function Navigation() {
                             <Search placeholder="search" onSearch={(e) => handlesearch(e)} style={{ width: 180 }} />
                         </Tooltip>
                     </li>
-                    <div className="primary-btn" ><Link to="/login">GET CONNECTED</Link></div>
-                    <div className="primary-btn2" onClick={handleClick}>MENU</div>
+                    <div className="primary-btn" ><Link to="/login">点此登录</Link></div>
+                    <div className="primary-btn2" onClick={handleClick}>菜单</div>
                 </ul>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'} >
                     <li>
-                        <Link className='link' to="/home">Home</Link>
+                        <Link className='link' to="/home">首页</Link>
                     </li>
                     <li>
-                        <Link to="/blogArticles">Articles</Link>
+                        <Link to="/blogArticles">文章</Link>
                     </li>
                     <li>
-                        <Link to="/projects">Projects</Link>
+                        <Link to="/projects">项目</Link>
                     </li>
                     {/* <li>
                         <Link to="/activity">Activity</Link>
                     </li> */}
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact">联系我</Link>
                     </li>
                     <li>
-                        <Link to="/login">Login</Link>
+                        <Link to="/login">登录</Link>
                     </li>
                 </ul>
 

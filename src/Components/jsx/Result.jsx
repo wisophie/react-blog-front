@@ -14,7 +14,7 @@ export default function Results({ num, setNum, lgclick }) {
     if (lgclick) {
       const time = setInterval(() => {
         setNum(num => {
-          console.log(num)
+
           if (num < 2) {
             clearInterval(time)
           };

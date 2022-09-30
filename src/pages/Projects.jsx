@@ -15,6 +15,10 @@ import itjp from '../img/itjp.jpg'
 import lichatserver from '../img/lichatserver.jpg'
 import logo2_1 from '../img/logo2_1.png';
 import blog from '../img/blog.jpg';
+import jiedian from '../img/jiedian.jpg';
+import tongji from '../img/tongji.jpg';
+import lua from '../img/lua.png';
+import jiedianicon from '../img/jiedianicon.png';
 import { Tooltip, Modal, Image } from 'antd';
 import { MaskContext } from '../App';
 
@@ -85,25 +89,28 @@ export default function Projects() {
   const [state, toggle] = useState(true)
   const [state1, toggle1] = useState(true)
   const [state2, toggle2] = useState(true)
-  const lichaturl = "http://www.wispw.com:8086"
-  const yuantiku = "http://www.wispw.com:8083"
-  const net163 = "http://www.wispw.com:8084"
+  const lichaturl = "https://www.wispw.com:8087/"
+  const yuantiku = "https://www.wispw.com:8083"
+  const net163 = "https://www.wispw.com:8084"
   const personalblog = "/home"
   const { x } = useSpring({
     from: { x: 0 },
     x: state ? 1 : 0,
     config: { duration: 1000 },
   })
+
   const { x1 } = useSpring({
     from: { x1: 0 },
     x1: state1 ? 1 : 0,
     config: { duration: 1000 },
   })
+
   const { x2 } = useSpring({
     from: { x2: 0 },
     x2: state2 ? 1 : 0,
     config: { duration: 1000 },
   })
+
   // 返回顶部
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -296,7 +303,7 @@ export default function Projects() {
           {/* <div className='items'><div className='item'></div></div> */}
         </div>
         <div className='col' style={{ width: ' 33.3333%' }}>
-          <div className='items'>
+          {/* <div className='items'>
             <div className='item'>
               <img className='lichatlogo' src={net163logo} alt="" />
               <h4>仿网易严选H5移动端项目</h4>
@@ -325,7 +332,34 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          <div className='items'> <div className='item'>
+            <img className='lichatlogo' src={jiedian} alt="" />
+            <h4>微信群照片统计工具</h4>
+            <div></div>
+            <div><Image src={tongji} alt="" /></div>
+            <div className='discription'><p>基于Lua语言的微信群照片统计工具,可以在1分钟内自动统计百人群上百张照片的发布情况，精确统计到每个人的张数。</p></div>
+            <div className='linkwrap' onMouseEnter={() => toggle()}
+
+            >
+              <div className='link server' style={{
+                opacity: x.to({ range: [0, 1], output: [1, 1] }),
+                scale: x.to({
+                  range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                  output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                }),
+              }}><img src={linklogo} alt="" />
+              </div>
+            </div>
+            <div className='techused'>
+              <h4>技术栈</h4>
+              <div>
+                <Tooltip title="Lua"><img src={lua} alt="" /></Tooltip>
+                <Tooltip title="节点精灵"><img src={jiedianicon} alt="" /></Tooltip>
+              </div>
+
+            </div>
+          </div></div>
           <div className='items'>
             <div className='mores'><span>更多</span>
             </div>

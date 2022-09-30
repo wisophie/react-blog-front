@@ -20,14 +20,12 @@ function SellerCard() {
                                             <img src={item.image} alt="" />
                                         </div>
 
-
-
                                         <h3>{item.title}</h3>
                                         <div className='content'>
                                             <p>{item.content}</p>
                                         </div>
 
-                                        <Link to='/projects'>READ MORE</Link>
+                                        <Link to='/projects'>点击详情</Link>
                                     </div>
 
 
